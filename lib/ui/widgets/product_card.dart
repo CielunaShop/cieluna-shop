@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../constants/color.dart';
+import '../../constants/text_styles.dart';
 import '../../models/product.dart';
-import '../../../constants/color.dart';
-import '../../../constants/text_styles.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -13,42 +14,129 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(28.r),
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16.r),
-      child: Container(
-        padding: EdgeInsets.all(14.r),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          color: card,
+          borderRadius: BorderRadius.circular(28.r),
+          border: Border.all(color: border, width: 1),
           boxShadow: [
             BoxShadow(
-              color: Colors.black12,
-              blurRadius: 8.r,
-              offset: Offset(0, 4),
-            )
+              color: shadow,
+              blurRadius: 28,
+              offset: const Offset(0, 14),
+            ),
           ],
         ),
+
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // IMAGE
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(28.r),
+                topRight: Radius.circular(28.r),
+              ),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: Image.asset(product.images.first, fit: BoxFit.cover),
+              ),
+            ),
+
             Expanded(
-  child: ClipRRect(
-    borderRadius: BorderRadius.circular(12.r),
-    child: product.images.isNotEmpty
-        ? Image.asset(product.images.first, fit: BoxFit.cover)
-        : Container(
-            color: blush,
-            child: Center(child: Text("No Image")),
-          ),
-  ),
-),
+              child: Padding(
+                padding: EdgeInsets.all(18.w),
 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
 
-            SizedBox(height: 10.h),
-            Text(product.title, style: AppTextStyles.title.copyWith(fontSize: 14.sp)),
-            SizedBox(height: 4.h),
-            Text(product.tagline, style: AppTextStyles.subtitle.copyWith(fontSize: 12.sp), maxLines: 1),
-            SizedBox(height: 10.h),
-            Text("₹${product.price}", style: AppTextStyles.price.copyWith(fontSize: 16.sp)),
+                  children: [
+                    if (product.featured)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 6.h,
+                        ),
+
+                        decoration: BoxDecoration(
+                          color: blush,
+                          borderRadius: BorderRadius.circular(30.r),
+                        ),
+
+                        child: Text(
+                          "FEATURED",
+                          style: AppTextStyles.subtitle.copyWith(
+                            fontSize: 11.sp,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.w700,
+                            color: accentPink,
+                          ),
+                        ),
+                      ),
+
+                    SizedBox(height: 12.h),
+
+                    Text(
+                      product.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.title.copyWith(
+                        fontSize: 22.sp,
+                        height: 1.2,
+                      ),
+                    ),
+
+                    SizedBox(height: 8.h),
+
+                    Text(
+                      product.tagline,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.subtitle.copyWith(height: 1.5),
+                    ),
+
+                    const Spacer(),
+
+                    Row(
+                      children: [
+                        Text(
+                          "₹${product.price}",
+                          style: AppTextStyles.title.copyWith(
+                            color: accentPink,
+                            fontSize: 26.sp,
+                          ),
+                        ),
+
+                        const Spacer(),
+
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 14.w,
+                            vertical: 8.h,
+                          ),
+
+                          decoration: BoxDecoration(
+                            color: primaryPink,
+                            borderRadius: BorderRadius.circular(30.r),
+                          ),
+
+                          child: Text(
+                            "View",
+                            style: AppTextStyles.button.copyWith(
+                              fontSize: 13.sp,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

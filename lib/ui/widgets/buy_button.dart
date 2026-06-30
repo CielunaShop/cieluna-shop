@@ -15,29 +15,41 @@ class BuyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 16.h),
-        decoration: BoxDecoration(
-          color: primaryPink,
-          borderRadius: BorderRadius.circular(20.r),
-          boxShadow: [
-            BoxShadow(
-              color: shadow,
-              blurRadius: 14,
-              offset: const Offset(0, 6),
-            ),
-          ],
+    return  InkWell(
+  borderRadius: BorderRadius.circular(24.r),
+  onTap: onTap,
+  child: Container(
+    width: double.infinity,
+    padding: EdgeInsets.symmetric(
+      vertical: 18.h,
+    ),
+    decoration: BoxDecoration(
+      color: primaryPink,
+      borderRadius: BorderRadius.circular(24.r),
+      boxShadow: [
+        BoxShadow(
+          color: shadow,
+          blurRadius: 22,
+          offset: const Offset(0, 10),
         ),
-        child: Center(
-          child: Text(
-            text,
-            style: AppTextStyles.button,
-          ),
+      ],
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          text,
+          style: AppTextStyles.button,
         ),
-      ),
-    );
+        SizedBox(width: 10.w),
+        Icon(
+          Icons.arrow_forward_rounded,
+          color: Colors.white,
+          size: 20.sp,
+        ),
+      ],
+    ),
+  ),
+);
   }
 }

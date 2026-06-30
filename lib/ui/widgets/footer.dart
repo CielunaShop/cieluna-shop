@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-      child: Text("Contact: selorasubs@gmail.com", style: AppTextStyles.small, textAlign: TextAlign.center,),
+      child: Text("Contact: cielunashop@gmail.com", style: AppTextStyles.small, textAlign: TextAlign.center,),
     );
   }
 }

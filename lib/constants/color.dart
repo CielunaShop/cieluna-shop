@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 /// Primary Brand Colors
-const Color primaryPink = Color(0xFFE9AFC4);
+const Color primaryPink = Color(0xFFD991AC);
 const Color blush = Color(0xFFF7D6E0);
-const Color accentPink = Color(0xFFC9799D);
-
+const Color accentPink = Color(0xFFB76A89);
 /// Backgrounds
-const Color background = Color(0xFFFFF9FB);
+const Color background = Color(0xFFFCF6F8);
 const Color card = Colors.white;
 
 /// Text
