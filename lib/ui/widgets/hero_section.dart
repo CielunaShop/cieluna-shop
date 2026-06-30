@@ -10,127 +10,87 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-
-      margin: EdgeInsets.all(20.w),
-
-      padding: EdgeInsets.symmetric(
-        horizontal: 28.w,
-        vertical: 55.h,
-      ),
-
+      margin: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 0),
+      padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 36.h),
       decoration: BoxDecoration(
         color: card,
-        borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(
-          color: border,
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: border),
         boxShadow: [
-          BoxShadow(
-            color: shadow,
-            blurRadius: 35,
-            offset: const Offset(0, 15),
-          ),
+          BoxShadow(color: shadow, blurRadius: 30, offset: const Offset(0, 15)),
         ],
       ),
 
       child: Column(
         children: [
           Container(
-            width: 72.w,
-            height: 72.w,
-            decoration: BoxDecoration(
-              color: blush,
-              shape: BoxShape.circle,
-            ),
+            width: 60.w,
+            height: 60.w,
+            decoration: BoxDecoration(color: blush, shape: BoxShape.circle),
             child: Center(
               child: Text(
                 "♡",
-                style: TextStyle(
-                  fontSize: 34.sp,
-                  color: accentPink,
-                ),
+                style: TextStyle(fontSize: 28.sp, color: accentPink),
               ),
             ),
           ),
 
-          SizedBox(height: 28.h),
+          SizedBox(height: 22.h),
 
           Text(
             "CIELUNA",
-            textAlign: TextAlign.center,
             style: AppTextStyles.title.copyWith(
-              fontSize: 34.sp,
+              fontSize: 30.sp,
+              letterSpacing: 6,
               fontWeight: FontWeight.w700,
-              letterSpacing: 7,
             ),
           ),
 
-          SizedBox(height: 10.h),
+          SizedBox(height: 6.h),
 
           Text(
             "DIGITAL STATIONERY",
             style: AppTextStyles.subtitle.copyWith(
               letterSpacing: 3,
-              fontSize: 12.sp,
+              fontSize: 11.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
 
-          SizedBox(height: 32.h),
+          SizedBox(height: 24.h),
 
           Text(
-            "Create a life\nyou'll love planning.",
+            "Beautiful digital planners\nfor everyday life.",
             textAlign: TextAlign.center,
-            style: AppTextStyles.title.copyWith(
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w500,
-              height: 1.35,
-            ),
+            style: AppTextStyles.heading.copyWith(fontSize: 25.sp, height: 1.3),
           ),
 
-          SizedBox(height: 18.h),
+          SizedBox(height: 16.h),
 
           Text(
-            "Thoughtfully designed digital stationery\nthat helps you stay organized with beauty,\nclarity and intention.",
+            "Minimal printable planners, journals\nand templates designed with elegance.",
             textAlign: TextAlign.center,
-            style: AppTextStyles.subtitle.copyWith(
-              fontSize: 16.sp,
-              height: 1.8,
-            ),
+            style: AppTextStyles.subtitle.copyWith(height: 1.6),
           ),
 
-          SizedBox(height: 36.h),
+          SizedBox(height: 28.h),
 
-          ElevatedButton(
-            onPressed: () {},
-
-            style: ElevatedButton.styleFrom(
-              backgroundColor: primaryPink,
-              foregroundColor: Colors.white,
-              elevation: 0,
-              padding: EdgeInsets.symmetric(
-                horizontal: 34.w,
-                vertical: 18.h,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.r),
-              ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 15.h),
+            decoration: BoxDecoration(
+              color: primaryPink,
+              borderRadius: BorderRadius.circular(50.r),
             ),
-
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  "Explore Collection",
-                  style: AppTextStyles.button,
-                ),
+                Text("Explore Collection", style: AppTextStyles.button),
 
-                SizedBox(width: 10.w),
+                SizedBox(width: 8.w),
 
                 Icon(
                   Icons.arrow_forward_rounded,
+                  color: Colors.white,
                   size: 20.sp,
                 ),
               ],

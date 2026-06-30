@@ -14,10 +14,7 @@ import '../widgets/section_title.dart';
 class ProductDetailPage extends StatelessWidget {
   final Product product;
 
-  const ProductDetailPage({
-    super.key,
-    required this.product,
-  });
+  const ProductDetailPage({super.key, required this.product});
 
   Future<void> openLink(String url) async {
     await launchUrl(Uri.parse(url));
@@ -30,17 +27,12 @@ class ProductDetailPage extends StatelessWidget {
 
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 22.w,
-            vertical: 22.h,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 22.h),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               /// Back Button
-
               InkWell(
                 borderRadius: BorderRadius.circular(40.r),
                 onTap: () => Navigator.pop(context),
@@ -51,11 +43,7 @@ class ProductDetailPage extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-
-                      Icon(
-                        Icons.arrow_back_rounded,
-                        color: accentPink,
-                      ),
+                      Icon(Icons.arrow_back_rounded, color: accentPink),
 
                       SizedBox(width: 6.w),
 
@@ -74,21 +62,16 @@ class ProductDetailPage extends StatelessWidget {
               SizedBox(height: 26.h),
 
               /// Title
-
               Text(
                 product.title,
-                style: AppTextStyles.heading.copyWith(
-                  fontSize: 34.sp,
-                ),
+                style: AppTextStyles.heading.copyWith(fontSize: 34.sp),
               ),
 
               SizedBox(height: 10.h),
 
               Text(
                 product.tagline,
-                style: AppTextStyles.subtitle.copyWith(
-                  fontSize: 16.sp,
-                ),
+                style: AppTextStyles.subtitle.copyWith(fontSize: 16.sp),
               ),
 
               SizedBox(height: 24.h),
@@ -123,9 +106,7 @@ class ProductDetailPage extends StatelessWidget {
 
               SizedBox(height: 50.h),
 
-              ProductImageCarousel(
-                images: product.images,
-              ),
+              ProductImageCarousel(images: product.images),
 
               SizedBox(height: 55.h),
 
@@ -138,9 +119,7 @@ class ProductDetailPage extends StatelessWidget {
 
               Text(
                 product.description,
-                style: AppTextStyles.body.copyWith(
-                  height: 1.8,
-                ),
+                style: AppTextStyles.body.copyWith(height: 1.8),
               ),
 
               SizedBox(height: 55.h),
@@ -160,7 +139,6 @@ class ProductDetailPage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 10.h),
                           child: Row(
                             children: [
-
                               Text(
                                 "♡",
                                 style: TextStyle(
@@ -172,10 +150,7 @@ class ProductDetailPage extends StatelessWidget {
                               SizedBox(width: 12.w),
 
                               Expanded(
-                                child: Text(
-                                  e,
-                                  style: AppTextStyles.body,
-                                ),
+                                child: Text(e, style: AppTextStyles.body),
                               ),
                             ],
                           ),
@@ -197,7 +172,6 @@ class ProductDetailPage extends StatelessWidget {
               _InfoCard(
                 child: Column(
                   children: [
-
                     _specRow("Format", product.format),
 
                     Divider(color: border),
@@ -207,7 +181,6 @@ class ProductDetailPage extends StatelessWidget {
                     Divider(color: border),
 
                     _specRow("Pages", "${product.pageCount}"),
-
                   ],
                 ),
               ),
@@ -225,10 +198,7 @@ class ProductDetailPage extends StatelessWidget {
 
 Widget _chip(String text) {
   return Container(
-    padding: const EdgeInsets.symmetric(
-      horizontal: 16,
-      vertical: 10,
-    ),
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
     decoration: BoxDecoration(
       color: blush,
       borderRadius: BorderRadius.circular(40),
@@ -245,26 +215,17 @@ Widget _chip(String text) {
 
 Widget _specRow(String title, String value) {
   return Padding(
-    padding: const EdgeInsets.symmetric(
-      vertical: 12,
-    ),
+    padding: const EdgeInsets.symmetric(vertical: 12),
     child: Row(
       children: [
-
         Expanded(
           child: Text(
             title,
-            style: AppTextStyles.subtitle.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
+            style: AppTextStyles.subtitle.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
 
-        Text(
-          value,
-          style: AppTextStyles.body,
-        ),
-
+        Text(value, style: AppTextStyles.body),
       ],
     ),
   );
@@ -273,9 +234,7 @@ Widget _specRow(String title, String value) {
 class _InfoCard extends StatelessWidget {
   final Widget child;
 
-  const _InfoCard({
-    required this.child,
-  });
+  const _InfoCard({required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -287,15 +246,9 @@ class _InfoCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: card,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: border,
-        ),
+        border: Border.all(color: border),
         boxShadow: [
-          BoxShadow(
-            color: shadow,
-            blurRadius: 18,
-            offset: const Offset(0, 8),
-          ),
+          BoxShadow(color: shadow, blurRadius: 18, offset: const Offset(0, 8)),
         ],
       ),
 

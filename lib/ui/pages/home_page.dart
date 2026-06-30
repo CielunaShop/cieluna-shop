@@ -1,15 +1,15 @@
-import 'package:cielunashop/ui/pages/sections/featured_section.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../constants/text_styles.dart';
-import '../../ui/pages/product_detail_page.dart';
+import 'package:provider/provider.dart';
+
+import '../../constants/color.dart';
 import '../../providers/product_provider.dart';
+import '../pages/product_detail_page.dart';
+import '../pages/sections/featured_section.dart';
 import '../widgets/category_selector.dart';
+import '../widgets/footer.dart';
 import '../widgets/hero_section.dart';
 import '../widgets/product_card.dart';
-import '../widgets/footer.dart';
-import '../../../constants/color.dart';
 import '../widgets/section_title.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,86 +18,96 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<ProductProvider>();
-    final list = provider.productsFiltered;
+    final products = provider.productsFiltered;
 
     return Scaffold(
       backgroundColor: background,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const HeroSection(),
 
-            SizedBox(height: 50.h),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const HeroSection(),
 
-            const FeaturedSection(),
+              SizedBox(height: 50.h),
 
-            SizedBox(height: 60.h),
+              const FeaturedSection(),
 
-            CategorySelector(
-              selected: provider.selected,
-              onSelect: provider.selectCategory,
-            ),
+              SizedBox(height: 60.h),
 
-            SizedBox(height: 40.h),
+              const SectionTitle(
+                title: "Browse Collection",
+                subtitle: "Explore beautifully crafted digital stationery.",
+              ),
 
-           const SectionTitle(
-  title: "Browse Collection",
-  subtitle:
-      "Explore beautifully crafted digital stationery.",
-),
+              SizedBox(height: 26.h),
 
-SizedBox(height: 30),
+              CategorySelector(
+                selected: provider.selected,
+                onSelect: provider.selectCategory,
+              ),
 
-            SizedBox(height: 22.h),
+              SizedBox(height: 32.h),
 
-            LayoutBuilder(
-              builder: (_, c) {
-                int cols = c.maxWidth > 900
-                    ? 3
-                    : c.maxWidth > 600
-                    ? 2
-                    : 1;
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
 
-                return GridView.builder(
-                  shrinkWrap: true,
+                child: LayoutBuilder(
+                  builder: (_, constraints) {
+                    final width = constraints.maxWidth;
 
-                  physics: const NeverScrollableScrollPhysics(),
+                    int columns;
 
-                  padding: EdgeInsets.symmetric(horizontal: 22.w),
+                    if (width >= 1100) {
+                      columns = 4;
+                    } else if (width >= 750) {
+                      columns = 3;
+                    } else {
+                      columns = 2;
+                    }
 
-                  itemCount: list.length,
+                    return GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
 
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: cols,
+                      itemCount: products.length,
 
-                    crossAxisSpacing: 22,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: columns,
 
-                    mainAxisSpacing: 22,
-                    childAspectRatio: .68,
-                  ),
+                        crossAxisSpacing: 18,
 
-                  itemBuilder: (_, i) {
-                    return ProductCard(
-                      product: list[i],
+                        mainAxisSpacing: 18,
 
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => ProductDetailPage(product: list[i]),
-                          ),
+                        childAspectRatio: .68,
+                      ),
+
+                      itemBuilder: (_, index) {
+                        final product = products[index];
+
+                        return ProductCard(
+                          product: product,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    ProductDetailPage(product: product),
+                              ),
+                            );
+                          },
                         );
                       },
                     );
                   },
-                );
-              },
-            ),
+                ),
+              ),
 
-            SizedBox(height: 70.h),
+              SizedBox(height: 70.h),
 
-            const Footer(),
-          ],
+              const Footer(),
+            ],
+          ),
         ),
       ),
     );

@@ -45,7 +45,7 @@ class CategorySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44.h,
+      height: 52.h,
       child: ListView.separated(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         scrollDirection: Axis.horizontal,
@@ -65,14 +65,22 @@ class CategorySelector extends StatelessWidget {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
 
-              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
-
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 12.h),
               decoration: BoxDecoration(
                 color: active ? primaryPink : card,
 
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(40),
 
-                border: Border.all(color: border),
+                border: Border.all(color: active ? primaryPink : border),
+
+                boxShadow: [
+                  if (active)
+                    BoxShadow(
+                      color: primaryPink.withOpacity(.18),
+                      blurRadius: 18,
+                      offset: const Offset(0, 8),
+                    ),
+                ],
               ),
 
               child: Center(
@@ -80,6 +88,8 @@ class CategorySelector extends StatelessWidget {
                   getLabel(category),
 
                   style: AppTextStyles.subtitle.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.sp,
                     color: active ? Colors.white : textDark,
                   ),
                 ),

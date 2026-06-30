@@ -14,14 +14,14 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(28.r),
+      borderRadius: BorderRadius.circular(32.r),
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
 
         decoration: BoxDecoration(
           color: card,
-          borderRadius: BorderRadius.circular(28.r),
+          borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: border, width: 1),
           boxShadow: [
             BoxShadow(
@@ -38,65 +38,40 @@ class ProductCard extends StatelessWidget {
             // IMAGE
             ClipRRect(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(28.r),
-                topRight: Radius.circular(28.r),
+                topLeft: Radius.circular(32.r),
+                topRight: Radius.circular(32.r),
               ),
               child: AspectRatio(
-                aspectRatio: 1,
+                aspectRatio: .82,
                 child: Image.asset(product.images.first, fit: BoxFit.cover),
               ),
             ),
 
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(18.w),
-
+                padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 20.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
-                    if (product.featured)
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.w,
-                          vertical: 6.h,
-                        ),
-
-                        decoration: BoxDecoration(
-                          color: blush,
-                          borderRadius: BorderRadius.circular(30.r),
-                        ),
-
-                        child: Text(
-                          "FEATURED",
-                          style: AppTextStyles.subtitle.copyWith(
-                            fontSize: 11.sp,
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.w700,
-                            color: accentPink,
-                          ),
-                        ),
-                      ),
-
-                    SizedBox(height: 12.h),
-
                     Text(
                       product.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.title.copyWith(
-                        fontSize: 22.sp,
-                        height: 1.2,
+                        fontSize: 19.sp,
+                        height: 1.3,
                       ),
                     ),
 
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 10.h),
 
                     Text(
-                      product.tagline,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.subtitle.copyWith(height: 1.5),
+                      "₹${product.price}",
+                      style: AppTextStyles.title.copyWith(
+                        color: accentPink,
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
 
                     const Spacer(),
@@ -104,32 +79,19 @@ class ProductCard extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "₹${product.price}",
-                          style: AppTextStyles.title.copyWith(
+                          "♡ View Details",
+                          style: AppTextStyles.subtitle.copyWith(
                             color: accentPink,
-                            fontSize: 26.sp,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
 
-                        const Spacer(),
+                        SizedBox(width: 4.w),
 
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 8.h,
-                          ),
-
-                          decoration: BoxDecoration(
-                            color: primaryPink,
-                            borderRadius: BorderRadius.circular(30.r),
-                          ),
-
-                          child: Text(
-                            "View",
-                            style: AppTextStyles.button.copyWith(
-                              fontSize: 13.sp,
-                            ),
-                          ),
+                        Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 16.sp,
+                          color: accentPink,
                         ),
                       ],
                     ),

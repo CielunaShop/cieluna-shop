@@ -1,79 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../constants/color.dart';
-import '../../../constants/text_styles.dart';
-import '../../../providers/product_provider.dart';
-import '../../widgets/product_card.dart';
+import '../../../data/products.dart';
+import '../../widgets/featured_product_card.dart';
 import '../../widgets/section_title.dart';
-import '../product_detail_page.dart';
 
 class FeaturedSection extends StatelessWidget {
   const FeaturedSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.watch<ProductProvider>();
+    final featured = products.where((e) => e.featured).take(4).toList();
 
-    final featured = provider.productsFiltered
-        .where((e) => e.featured)
-        .toList();
-
-    if (featured.isEmpty) {
-      return const SizedBox();
-    }
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 22.w),
-
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-
-        children: [
+    return Column(
+      children: [
         const SectionTitle(
-  title: "Featured Collection",
-  subtitle:
-      "Handpicked planners loved by our community.",
-),
+          title: "Featured Collection",
+          subtitle: "Handpicked favourites you'll love.",
+        ),
 
-SizedBox(height: 28),
+        SizedBox(height: 32.h),
 
-          SizedBox(height: 22.h),
+        SizedBox(
+          height: 360.h,
+          child: ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            scrollDirection: Axis.horizontal,
 
-          SizedBox(
-            height: 430.h,
+            itemCount: featured.length,
 
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
+            separatorBuilder: (_, __) => SizedBox(width: 18.w),
 
-              itemCount: featured.length,
-
-              separatorBuilder: (_, __) => SizedBox(width: 20.w),
-
-              itemBuilder: (_, index) {
-                return SizedBox(
-                  width: 310.w,
-
-                  child: ProductCard(
-                    product: featured[index],
-
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              ProductDetailPage(product: featured[index]),
-                        ),
-                      );
-                    },
-                  ),
-                );
-              },
-            ),
+            itemBuilder: (_, index) {
+              return FeaturedProductCard(product: featured[index]);
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

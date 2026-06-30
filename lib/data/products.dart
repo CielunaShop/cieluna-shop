@@ -31,7 +31,7 @@ final List<Product> products = [
 
       "High Quality",
 
-      "Instant Download",
+      "Lifetime Access",
     ],
 
     contents: [
