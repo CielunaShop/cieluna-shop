@@ -21,7 +21,7 @@ class ProductCard extends StatelessWidget {
 
         decoration: BoxDecoration(
           color: card,
-          borderRadius: BorderRadius.circular(32.r),
+          borderRadius: BorderRadius.circular(28.r),
           border: Border.all(color: border, width: 1),
           boxShadow: [
             BoxShadow(
@@ -37,7 +37,7 @@ class ProductCard extends StatelessWidget {
           children: [
             // IMAGE
             Padding(
-              padding: EdgeInsets.all(16.w),
+              padding: EdgeInsets.all(18.w),
 
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24.r),
@@ -50,55 +50,57 @@ class ProductCard extends StatelessWidget {
               ),
             ),
 
-            Padding(
-              padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 20.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.title,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.title.copyWith(
-                      fontSize: 19.sp,
-                      height: 1.3,
-                    ),
-                  ),
-
-                  SizedBox(height: 10.h),
-
-                  Text(
-                    "₹${product.price}",
-                    style: AppTextStyles.title.copyWith(
-                      color: accentPink,
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-
-                  SizedBox(height: 18.h),
-
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "♡ View Details",
-                        style: AppTextStyles.subtitle.copyWith(
-                          color: accentPink,
-                          fontWeight: FontWeight.w600,
-                        ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 20.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      product.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.title.copyWith(
+                        fontSize: 17.sp,
+                        height: 1.3,
                       ),
-
-                      SizedBox(width: 4.w),
-
-                      Icon(
-                        Icons.arrow_forward_rounded,
-                        size: 16.sp,
+                    ),
+              
+                    SizedBox(height: 10.h),
+              
+                    Text(
+                      "₹${product.price}",
+                      style: AppTextStyles.title.copyWith(
                         color: accentPink,
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.w700,
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+              
+                    SizedBox(height: 18.h),
+              
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "♡ View Details",
+                          style: AppTextStyles.subtitle.copyWith(
+                            color: accentPink,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+              
+                        SizedBox(width: 4.w),
+              
+                        Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 16.sp,
+                          color: accentPink,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

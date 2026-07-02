@@ -6,10 +6,7 @@ import '../../constants/color.dart';
 class InfoCard extends StatelessWidget {
   final Widget child;
 
-  const InfoCard({
-    super.key,
-    required this.child,
-  });
+  const InfoCard({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +20,10 @@ class InfoCard extends StatelessWidget {
 
         borderRadius: BorderRadius.circular(24.r),
 
-        border: Border.all(
-          color: border,
-        ),
+        border: Border.all(color: border),
 
         boxShadow: [
-          BoxShadow(
-            color: shadow,
-            blurRadius: 20,
-            offset: const Offset(0, 8),
-          ),
+          BoxShadow(color: shadow, blurRadius: 20, offset: const Offset(0, 8)),
         ],
       ),
 

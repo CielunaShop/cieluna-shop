@@ -58,14 +58,12 @@ class HomePage extends StatelessWidget {
 
                     int columns;
 
-                    if (width >= 1100) {
+                    if (width >= 1200) {
                       columns = 4;
-                    } else if (width >= 750) {
+                    } else if (width >= 900) {
                       columns = 3;
-                    } else if (width >= 500) {
-                      columns = 2;
                     } else {
-                      columns = 1;
+                      columns = 2;
                     }
 
                     return GridView.builder(
@@ -81,7 +79,7 @@ class HomePage extends StatelessWidget {
 
                         mainAxisSpacing: 18,
 
-                        childAspectRatio: .58,
+                        childAspectRatio: .50,
                       ),
 
                       itemBuilder: (_, index) {

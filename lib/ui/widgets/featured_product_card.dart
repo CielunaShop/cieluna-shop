@@ -24,7 +24,7 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        width: 320.w,
+        width: 180.w,
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(26.r),
@@ -49,7 +49,7 @@ class FeaturedProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.r),
 
                 child: AspectRatio(
-                  aspectRatio: .85,
+                  aspectRatio: 1,
                   child: Image.asset(product.images.first, fit: BoxFit.cover),
                 ),
               ),
@@ -65,29 +65,28 @@ class FeaturedProductCard extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.title.copyWith(
-                      fontSize: 20.sp,
+                      fontSize: 16.sp,
                       height: 1.25,
                     ),
                   ),
 
-                  SizedBox(height: 8.h),
+                  // SizedBox(height: 8.h),
 
-                  Text(
-                    product.category.name.toUpperCase(),
-                    style: AppTextStyles.subtitle.copyWith(
-                      fontSize: 11.sp,
-                      letterSpacing: 2,
-                      color: subtitleColor,
-                    ),
-                  ),
-
+                  // Text(
+                  //   product.category.name.toUpperCase(),
+                  //   style: AppTextStyles.subtitle.copyWith(
+                  //     fontSize: 11.sp,
+                  //     letterSpacing: 2,
+                  //     color: subtitleColor,
+                  //   ),
+                  // ),
 
                   SizedBox(height: 10.h),
 
                   Text(
                     "₹${product.price}",
                     style: AppTextStyles.title.copyWith(
-                      fontSize: 22.sp,
+                      fontSize: 18.sp,
                       color: accentPink,
                     ),
                   ),

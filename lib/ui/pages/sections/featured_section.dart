@@ -22,7 +22,7 @@ class FeaturedSection extends StatelessWidget {
         SizedBox(height: 32.h),
 
         SizedBox(
-          height: 420.h,
+          height: 250.h,
           child: ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             scrollDirection: Axis.horizontal,
