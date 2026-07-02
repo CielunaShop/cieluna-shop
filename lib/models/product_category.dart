@@ -4,4 +4,6 @@ enum ProductCategory {
   templates,
   worksheets,
   bundles,
+  notes,
+  todos
 }

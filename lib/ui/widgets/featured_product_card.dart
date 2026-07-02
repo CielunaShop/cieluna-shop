@@ -9,12 +9,15 @@ import '../pages/product_detail_page.dart';
 class FeaturedProductCard extends StatelessWidget {
   final Product product;
 
-  const FeaturedProductCard({super.key, required this.product});
+  const FeaturedProductCard({
+    super.key,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(26.r),
+      borderRadius: BorderRadius.circular(24.r),
       onTap: () {
         Navigator.push(
           context,
@@ -24,75 +27,62 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        width: 180.w,
+        width: 170.w,
+
         decoration: BoxDecoration(
           color: card,
-          borderRadius: BorderRadius.circular(26.r),
+          borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: border),
           boxShadow: [
             BoxShadow(
               color: shadow,
-              blurRadius: 20,
-              offset: const Offset(0, 10),
+              blurRadius: 18,
+              offset: const Offset(0, 8),
             ),
           ],
         ),
 
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// IMAGE
-            Padding(
-              padding: EdgeInsets.all(16.w),
+        child: Padding(
+          padding: EdgeInsets.all(12.w),
 
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.r),
-
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18.r),
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: Image.asset(product.images.first, fit: BoxFit.cover),
+                  child: Image.asset(
+                    product.images.first,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
 
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.title,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.title.copyWith(
-                      fontSize: 16.sp,
-                      height: 1.25,
-                    ),
-                  ),
+              SizedBox(height: 14.h),
 
-                  // SizedBox(height: 8.h),
-
-                  // Text(
-                  //   product.category.name.toUpperCase(),
-                  //   style: AppTextStyles.subtitle.copyWith(
-                  //     fontSize: 11.sp,
-                  //     letterSpacing: 2,
-                  //     color: subtitleColor,
-                  //   ),
-                  // ),
-                  SizedBox(height: 10.h),
-
-                  Text(
-                    "₹${product.price}",
-                    style: AppTextStyles.title.copyWith(
-                      fontSize: 18.sp,
-                      color: accentPink,
-                    ),
-                  ),
-                ],
+              Text(
+                product.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.title.copyWith(
+                  fontSize: 16.sp,
+                  height: 1.25,
+                ),
               ),
-            ),
-          ],
+
+              SizedBox(height: 8.h),
+
+              Text(
+                "₹${product.price}",
+                style: AppTextStyles.title.copyWith(
+                  fontSize: 19.sp,
+                  color: accentPink,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

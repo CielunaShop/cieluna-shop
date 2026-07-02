@@ -39,6 +39,10 @@ class CategorySelector extends StatelessWidget {
         return "Worksheets";
       case ProductCategory.bundles:
         return "Bundles";
+      case ProductCategory.notes:
+        throw "Notes";
+      case ProductCategory.todos:
+        throw "To-Dos";
     }
   }
 

@@ -22,14 +22,18 @@ class FeaturedSection extends StatelessWidget {
         SizedBox(height: 32.h),
 
         SizedBox(
-          height: 250.h,
+          height: 290.h,
+
           child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.only(left: 20.w, right: 8.w),
+
             scrollDirection: Axis.horizontal,
+
+            physics: const BouncingScrollPhysics(),
 
             itemCount: featured.length,
 
-            separatorBuilder: (_, __) => SizedBox(width: 18.w),
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
 
             itemBuilder: (_, index) {
               return FeaturedProductCard(product: featured[index]);

@@ -66,6 +66,9 @@ flutter:
   assets:
     - assets/
     - assets/planners/fantasy/
+    - assets/todos/
+    - assets/notes/
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
