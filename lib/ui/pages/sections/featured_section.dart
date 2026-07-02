@@ -33,7 +33,7 @@ class FeaturedSection extends StatelessWidget {
 
             itemCount: featured.length,
 
-            separatorBuilder: (_, __) => SizedBox(width: 16.w),
+            separatorBuilder: (_, __) => SizedBox(width: 12.w),
 
             itemBuilder: (_, index) {
               return FeaturedProductCard(product: featured[index]);

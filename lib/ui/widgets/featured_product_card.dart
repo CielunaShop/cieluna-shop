@@ -33,13 +33,13 @@ class FeaturedProductCard extends StatelessWidget {
           color: card,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: border),
-          boxShadow: [
-            BoxShadow(
-              color: shadow,
-              blurRadius: 18,
-              offset: const Offset(0, 8),
-            ),
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: shadow,
+          //     blurRadius: 18,
+          //     offset: const Offset(0, 8),
+          //   ),
+          // ],
         ),
 
         child: Padding(
