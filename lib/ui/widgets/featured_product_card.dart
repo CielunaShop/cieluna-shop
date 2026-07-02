@@ -24,7 +24,7 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        // width: 180.w,
+        width: 180.w,
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: card,
