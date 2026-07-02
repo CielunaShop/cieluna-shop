@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constants/color.dart';
-import '../../constants/text_styles.dart';
-import '../../models/product_category.dart';
+import '../../../constants/color.dart';
+import '../../../constants/text_styles.dart';
+import '../../../models/product_category.dart';
 
 class CategorySelector extends StatelessWidget {
   final ProductCategory? selected;

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../data/products.dart';
 import '../../widgets/featured_product_card.dart';
-import '../../widgets/section_title.dart';
+import '../../widgets/shared/section_title.dart';
 
 class FeaturedSection extends StatelessWidget {
   const FeaturedSection({super.key});

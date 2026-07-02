@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'constants/color.dart';
 import 'providers/product_provider.dart';
-import 'ui/pages/home_page.dart';
+import 'ui/pages/home/home_page.dart';
 
 void main() {
   runApp(

@@ -7,9 +7,9 @@ import '../../constants/text_styles.dart';
 import '../../models/product.dart';
 
 import '../widgets/buy_button.dart';
-import '../widgets/footer.dart';
+import '../widgets/mobile/footer.dart';
 import '../widgets/product_image_carousel.dart';
-import '../widgets/section_title.dart';
+import '../widgets/shared/section_title.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final Product product;
