@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(32.r),
+      borderRadius: BorderRadius.circular(28.r),
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
@@ -36,67 +36,69 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // IMAGE
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(32.r),
-                topRight: Radius.circular(32.r),
-              ),
-              child: AspectRatio(
-                aspectRatio: .82,
-                child: Image.asset(product.images.first, fit: BoxFit.cover),
+            Padding(
+              padding: EdgeInsets.all(16.w),
+
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(24.r),
+
+                child: AspectRatio(
+                  aspectRatio: 1,
+
+                  child: Image.asset(product.images.first, fit: BoxFit.cover),
+                ),
               ),
             ),
 
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 20.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.title.copyWith(
-                        fontSize: 19.sp,
-                        height: 1.3,
-                      ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 20.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.title.copyWith(
+                      fontSize: 19.sp,
+                      height: 1.3,
                     ),
+                  ),
 
-                    SizedBox(height: 10.h),
+                  SizedBox(height: 10.h),
 
-                    Text(
-                      "₹${product.price}",
-                      style: AppTextStyles.title.copyWith(
-                        color: accentPink,
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
+                  Text(
+                    "₹${product.price}",
+                    style: AppTextStyles.title.copyWith(
+                      color: accentPink,
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w700,
                     ),
+                  ),
 
-                    const Spacer(),
+                  SizedBox(height: 18.h),
 
-                    Row(
-                      children: [
-                        Text(
-                          "♡ View Details",
-                          style: AppTextStyles.subtitle.copyWith(
-                            color: accentPink,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-
-                        SizedBox(width: 4.w),
-
-                        Icon(
-                          Icons.arrow_forward_rounded,
-                          size: 16.sp,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "♡ View Details",
+                        style: AppTextStyles.subtitle.copyWith(
                           color: accentPink,
+                          fontWeight: FontWeight.w600,
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+
+                      SizedBox(width: 4.w),
+
+                      Icon(
+                        Icons.arrow_forward_rounded,
+                        size: 16.sp,
+                        color: accentPink,
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],

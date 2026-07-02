@@ -24,7 +24,7 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        width: 205.w,
+        width: 320.w,
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(26.r),
@@ -42,14 +42,16 @@ class FeaturedProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// IMAGE
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(26.r),
-                topRight: Radius.circular(26.r),
-              ),
-              child: AspectRatio(
-                aspectRatio: .78,
-                child: Image.asset(product.images.first, fit: BoxFit.cover),
+            Padding(
+              padding: EdgeInsets.all(16.w),
+
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.r),
+
+                child: AspectRatio(
+                  aspectRatio: .85,
+                  child: Image.asset(product.images.first, fit: BoxFit.cover),
+                ),
               ),
             ),
 
@@ -63,7 +65,7 @@ class FeaturedProductCard extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.title.copyWith(
-                      fontSize: 18.sp,
+                      fontSize: 20.sp,
                       height: 1.25,
                     ),
                   ),
@@ -79,7 +81,6 @@ class FeaturedProductCard extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 10.h),
 
                   SizedBox(height: 10.h),
 

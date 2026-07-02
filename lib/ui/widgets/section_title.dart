@@ -51,7 +51,8 @@ class SectionTitle extends StatelessWidget {
         SizedBox(height: 20.h),
 
         Container(
-          width: 70.w,
+          margin: EdgeInsets.symmetric(horizontal: 4),
+          width: double.infinity,
           height: 2,
           decoration: BoxDecoration(
             color: blush,
