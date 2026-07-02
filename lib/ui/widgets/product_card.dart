@@ -39,7 +39,7 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 14.h),
+              SizedBox(height: 12.h),
 
               Expanded(
                 child: Column(
@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 8.h),
 
                     Text(
                       "₹${product.price}",
