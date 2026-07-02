@@ -64,11 +64,11 @@ class MobileHome extends StatelessWidget {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
 
-                    crossAxisSpacing: 16.w,
+                    crossAxisSpacing: 14.w,
 
-                    mainAxisSpacing: 18.h,
+                    mainAxisSpacing: 16.h,
 
-                    childAspectRatio: .63,
+                    childAspectRatio: .60,
                   ),
 
                   itemBuilder: (_, index) {
@@ -89,7 +89,7 @@ class MobileHome extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 70.h),
+              SizedBox(height: 50.h),
 
               const Footer(),
             ],
