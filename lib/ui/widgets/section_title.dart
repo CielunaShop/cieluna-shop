@@ -15,7 +15,7 @@ class SectionTitle extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal:15),
+          margin: EdgeInsets.symmetric(horizontal: 15),
           width: double.infinity,
           height: 2,
           decoration: BoxDecoration(
