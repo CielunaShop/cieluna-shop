@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../constants/color.dart';
 import '../../../constants/text_styles.dart';
 
+import 'desktop_hero_showcase.dart';
+
 class DesktopHero extends StatelessWidget {
   const DesktopHero({super.key});
 
@@ -141,83 +143,10 @@ class DesktopHero extends StatelessWidget {
             const SizedBox(width: 60),
 
             /// RIGHT
-            Expanded(
-              flex: 4,
-
-              child: AspectRatio(
-                aspectRatio: .82,
-
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: blush,
-                    borderRadius: BorderRadius.circular(32),
-                  ),
-
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 30,
-                        left: 30,
-                        child: Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(.35),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-
-                      Positioned(
-                        bottom: 40,
-                        right: 40,
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(.25),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-
-                      Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-
-                          children: [
-                            Text(
-                              "♡",
-                              style: TextStyle(
-                                fontSize: 80,
-                                color: accentPink.withOpacity(.75),
-                              ),
-                            ),
-
-                            const SizedBox(height: 18),
-
-                            Text(
-                              "Planner Preview",
-                              style: AppTextStyles.title.copyWith(fontSize: 28),
-                            ),
-
-                            const SizedBox(height: 10),
-
-                            Text(
-                              "Product mockups will\nappear here.",
-                              textAlign: TextAlign.center,
-                              style: AppTextStyles.subtitle.copyWith(
-                                fontSize: 17,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+          const Expanded(
+  flex: 4,
+  child: DesktopHeroShowcase(),
+),
           ],
         ),
       ),

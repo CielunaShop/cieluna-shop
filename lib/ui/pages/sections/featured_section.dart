@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../data/products.dart';
-import '../../widgets/featured_product_card.dart';
+import '../../widgets/mobile/featured_product_card.dart';
 import '../../widgets/shared/section_title.dart';
 
 class FeaturedSection extends StatelessWidget {

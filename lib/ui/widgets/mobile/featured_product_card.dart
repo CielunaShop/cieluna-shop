@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constants/color.dart';
-import '../../constants/text_styles.dart';
-import '../../models/product.dart';
-import '../pages/product_detail_page.dart';
+import '../../../constants/color.dart';
+import '../../../constants/text_styles.dart';
+import '../../../models/product.dart';
+import '../../pages/product_detail_page.dart';
 
 class FeaturedProductCard extends StatelessWidget {
   final Product product;

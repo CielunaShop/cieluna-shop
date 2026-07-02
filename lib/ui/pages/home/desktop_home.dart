@@ -11,6 +11,8 @@ import '../../widgets/desktop/desktop_product_grid.dart';
 import '../../widgets/desktop/desktop_footer.dart';
 import '../../widgets/shared/section_title.dart';
 
+import '../../widgets/desktop/desktop_navbar.dart';
+
 class DesktopHome extends StatelessWidget {
   const DesktopHome({super.key});
 
@@ -29,6 +31,10 @@ class DesktopHome extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+                const DesktopNavbar(),
+
+const SizedBox(height: 10),
                 const DesktopHero(),
 
                 const SizedBox(height: 70),
