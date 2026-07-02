@@ -8,22 +8,26 @@ class SectionTitle extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const SectionTitle({
-    super.key,
-    required this.title,
-    required this.subtitle,
-  });
+  const SectionTitle({super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Container(
+          margin: EdgeInsets.symmetric(horizontal:15),
+          width: double.infinity,
+          height: 2,
+          decoration: BoxDecoration(
+            color: blush,
+            borderRadius: BorderRadius.circular(100),
+          ),
+        ),
+
+        SizedBox(height: 12),
         Text(
           "♡",
-          style: TextStyle(
-            fontSize: 20.sp,
-            color: accentPink,
-          ),
+          style: TextStyle(fontSize: 20.sp, color: accentPink),
         ),
 
         SizedBox(height: 8.h),
@@ -42,22 +46,7 @@ class SectionTitle extends StatelessWidget {
         Text(
           subtitle,
           textAlign: TextAlign.center,
-          style: AppTextStyles.subtitle.copyWith(
-            fontSize: 15.sp,
-            height: 1.6,
-          ),
-        ),
-
-        SizedBox(height: 20.h),
-
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 4),
-          width: double.infinity,
-          height: 2,
-          decoration: BoxDecoration(
-            color: blush,
-            borderRadius: BorderRadius.circular(100),
-          ),
+          style: AppTextStyles.subtitle.copyWith(fontSize: 15.sp, height: 1.6),
         ),
       ],
     );
