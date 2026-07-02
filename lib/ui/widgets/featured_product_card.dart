@@ -27,7 +27,7 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        width: 155.w,
+        width: 170.w,
 
         decoration: BoxDecoration(
           color: card,
@@ -66,7 +66,7 @@ class FeaturedProductCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.title.copyWith(
-                  fontSize: 12.sp,
+                  fontSize: 16.sp,
                   height: 1.25,
                 ),
               ),
@@ -76,7 +76,7 @@ class FeaturedProductCard extends StatelessWidget {
               Text(
                 "₹${product.price}",
                 style: AppTextStyles.title.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 19.sp,
                   color: accentPink,
                   fontWeight: FontWeight.w700,
                 ),
