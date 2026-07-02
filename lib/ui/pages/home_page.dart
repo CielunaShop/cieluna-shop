@@ -12,6 +12,9 @@ import '../widgets/hero_section.dart';
 import '../widgets/product_card.dart';
 import '../widgets/section_title.dart';
 
+import '../widgets/mobile_product_card.dart';
+import '../widgets/desktop_product_card.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -57,12 +60,20 @@ class HomePage extends StatelessWidget {
 
                     int columns;
 
-                    if (width >= 1200) {
+                    double ratio;
+
+                    if (width >= 1400) {
                       columns = 4;
+                      ratio = .72;
                     } else if (width >= 900) {
                       columns = 3;
+                      ratio = .68;
+                    } else if (width >= 700) {
+                      columns = 2;
+                      ratio = .66;
                     } else {
                       columns = 2;
+                      ratio = .60;
                     }
 
                     return GridView.builder(
@@ -73,28 +84,39 @@ class HomePage extends StatelessWidget {
 
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: columns,
-
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-
-                        childAspectRatio: .60,
+                        crossAxisSpacing: 18,
+                        mainAxisSpacing: 18,
+                        childAspectRatio: ratio,
                       ),
 
                       itemBuilder: (_, index) {
                         final product = products[index];
 
-                        return ProductCard(
-                          product: product,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) =>
-                                    ProductDetailPage(product: product),
-                              ),
-                            );
-                          },
-                        );
+                        return width < 700
+                            ? MobileProductCard(
+                                product: product,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          ProductDetailPage(product: product),
+                                    ),
+                                  );
+                                },
+                              )
+                            : DesktopProductCard(
+                                product: product,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          ProductDetailPage(product: product),
+                                    ),
+                                  );
+                                },
+                              );
                       },
                     );
                   },

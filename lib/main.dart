@@ -27,10 +27,10 @@ class MyApp extends StatelessWidget {
           title: "Cieluna Shop",
 
           theme: ThemeData(
-  scaffoldBackgroundColor: background,
-  fontFamily: "Poppins",
-  useMaterial3: true,
-),
+            scaffoldBackgroundColor: background,
+            fontFamily: "Poppins",
+            useMaterial3: true,
+          ),
           home: child,
         );
       },
