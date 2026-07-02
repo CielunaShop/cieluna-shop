@@ -62,7 +62,7 @@ class ProductCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.title.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   height: 1.3,
                 ),
               ),
@@ -74,7 +74,7 @@ class ProductCard extends StatelessWidget {
                 style: AppTextStyles.title.copyWith(
                   color: accentPink,
                   fontWeight: FontWeight.w700,
-                  fontSize: 22.sp,
+                  fontSize: 20.sp,
                 ),
               ),
 
@@ -87,7 +87,7 @@ class ProductCard extends StatelessWidget {
                     style: AppTextStyles.subtitle.copyWith(
                       color: accentPink,
                       fontWeight: FontWeight.w600,
-                      fontSize: 13.sp,
+                      fontSize: 11.sp,
                     ),
                   ),
 
@@ -95,7 +95,7 @@ class ProductCard extends StatelessWidget {
 
                   Icon(
                     Icons.arrow_forward_rounded,
-                    size: 15.sp,
+                    size: 14.sp,
                     color: accentPink,
                   ),
                 ],

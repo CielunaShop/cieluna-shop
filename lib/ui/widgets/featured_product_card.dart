@@ -66,7 +66,7 @@ class FeaturedProductCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.title.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 12.sp,
                   height: 1.25,
                 ),
               ),
@@ -76,7 +76,7 @@ class FeaturedProductCard extends StatelessWidget {
               Text(
                 "₹${product.price}",
                 style: AppTextStyles.title.copyWith(
-                  fontSize: 19.sp,
+                  fontSize: 16.sp,
                   color: accentPink,
                   fontWeight: FontWeight.w700,
                 ),
