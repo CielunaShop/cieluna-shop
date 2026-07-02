@@ -24,15 +24,7 @@ final List<Product> products = [
       "assets/planners/fantasy/preview3.png",
     ],
 
-    highlights: [
-      "Printable PDF",
-
-      "Undated",
-
-      "High Quality",
-
-      "Lifetime Access",
-    ],
+    highlights: ["Printable PDF", "Undated", "High Quality", "Lifetime Access"],
 
     contents: [
       "Cover Page",

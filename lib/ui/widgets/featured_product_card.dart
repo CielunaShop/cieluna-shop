@@ -24,7 +24,8 @@ class FeaturedProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        width: 180.w,
+        // width: 180.w,
+        padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(26.r),
@@ -43,7 +44,7 @@ class FeaturedProductCard extends StatelessWidget {
           children: [
             /// IMAGE
             Padding(
-              padding: EdgeInsets.all(16.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
 
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.r),
@@ -56,7 +57,7 @@ class FeaturedProductCard extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.all(16.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -80,7 +81,6 @@ class FeaturedProductCard extends StatelessWidget {
                   //     color: subtitleColor,
                   //   ),
                   // ),
-
                   SizedBox(height: 10.h),
 
                   Text(

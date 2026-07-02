@@ -24,7 +24,7 @@ class SectionTitle extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 12),
+        SizedBox(height: 10),
         Text(
           "♡",
           style: TextStyle(fontSize: 20.sp, color: accentPink),
