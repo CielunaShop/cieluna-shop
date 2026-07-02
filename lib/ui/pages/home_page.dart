@@ -50,8 +50,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 32.h),
 
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
                 child: LayoutBuilder(
                   builder: (_, constraints) {
                     final width = constraints.maxWidth;
@@ -75,11 +74,10 @@ class HomePage extends StatelessWidget {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: columns,
 
-                        crossAxisSpacing: 18,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
 
-                        mainAxisSpacing: 18,
-
-                        childAspectRatio: .50,
+                        childAspectRatio: .73,
                       ),
 
                       itemBuilder: (_, index) {
