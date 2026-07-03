@@ -15,31 +15,30 @@ class DesktopProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
+        final width = constraints.maxWidth;
 
-        int columns = 4;
+        int columns;
 
-        if (constraints.maxWidth < 1350) {
+        if (width >= 1200) {
+          columns = 4;
+        } else if (width >= 850) {
           columns = 3;
+        } else {
+          columns = 2;
         }
 
         return GridView.builder(
           shrinkWrap: true,
-
           physics: const NeverScrollableScrollPhysics(),
-
           itemCount: products.length,
-
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: columns,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
 
-            crossAxisSpacing: 28,
-
-            mainAxisSpacing: 28,
-
-            childAspectRatio: .78,
+            // More vertical room for image + title + tagline + price
+            childAspectRatio: 0.72,
           ),
-
           itemBuilder: (_, index) {
             return DesktopProductCard(
               product: products[index],
