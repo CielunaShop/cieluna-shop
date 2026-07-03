@@ -12,7 +12,7 @@ class DesktopHero extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(48, 28, 48, 0),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 58),
+        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 42),
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(28),
@@ -28,9 +28,10 @@ class DesktopHero extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            /// HEART
             Container(
-              width: 54,
-              height: 54,
+              width: 48,
+              height: 48,
               decoration: const BoxDecoration(
                 color: blush,
                 shape: BoxShape.circle,
@@ -38,59 +39,79 @@ class DesktopHero extends StatelessWidget {
               child: const Center(
                 child: Text(
                   "♡",
-                  style: TextStyle(fontSize: 26, color: accentPink),
+                  style: TextStyle(fontSize: 23, color: accentPink),
                 ),
               ),
             ),
 
-            const SizedBox(height: 22),
+            const SizedBox(height: 18),
 
+            /// BRAND NAME
             Text(
               "CIELUNA",
               textAlign: TextAlign.center,
               style: AppTextStyles.title.copyWith(
-                fontSize: 34,
+                fontSize: 29,
                 fontWeight: FontWeight.w700,
-                letterSpacing: 8,
+                letterSpacing: 7,
               ),
             ),
 
-            const SizedBox(height: 8),
+            const SizedBox(height: 7),
 
+            /// BRAND SIGNATURE
             Text(
-              "DIGITAL STATIONERY",
+              "A FANTASY DESIGNER'S DIGITAL UNIVERSE",
               textAlign: TextAlign.center,
               style: AppTextStyles.subtitle.copyWith(
-                fontSize: 11,
-                letterSpacing: 4,
+                fontSize: 10,
+                letterSpacing: 2.8,
+                color: accentPink,
+                fontWeight: FontWeight.w600,
               ),
             ),
 
-            const SizedBox(height: 34),
+            const SizedBox(height: 28),
 
+            /// MAIN HEADING
             Text(
-              "Beautiful planners\nfor everyday life.",
+              "Planners, pages & little worlds\nmade to feel like yours.",
               textAlign: TextAlign.center,
               style: AppTextStyles.heading.copyWith(
-                fontSize: 42,
-                height: 1.15,
+                fontSize: 37,
+                height: 1.16,
                 fontWeight: FontWeight.w600,
+              ),
+            ),
+
+            const SizedBox(height: 18),
+
+            /// DESCRIPTION
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 680),
+              child: Text(
+                "Digital printables for planning, journaling and everything "
+                "in between — created for people who like their everyday "
+                "pages with a little more personality.",
+                textAlign: TextAlign.center,
+                style: AppTextStyles.subtitle.copyWith(
+                  fontSize: 14,
+                  height: 1.65,
+                ),
               ),
             ),
 
             const SizedBox(height: 22),
 
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 620),
-              child: Text(
-                "Premium printable planners, journals, worksheets and "
-                "templates designed to make planning calm, beautiful "
-                "and enjoyable.",
-                textAlign: TextAlign.center,
-                style: AppTextStyles.subtitle.copyWith(
-                  fontSize: 16,
-                  height: 1.7,
-                ),
+            /// CATEGORIES
+            Text(
+              "PLANNERS  •  JOURNALING  •  AESTHETIC PAGES  •  CUSTOM REQUESTS",
+              textAlign: TextAlign.center,
+              style: AppTextStyles.subtitle.copyWith(
+                fontSize: 10,
+                letterSpacing: 1.7,
+                color: accentPink,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ],

@@ -28,71 +28,73 @@ class MobileHome extends StatelessWidget {
 
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const HeroSection(),
+          child: Padding(
+            // padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 24.h),
 
-              SizedBox(height: 50.h),
+            child: Column(
+              children: [
+                const HeroSection(),
 
-              const FeaturedSection(),
+                SizedBox(height: 50.h),
 
-              SizedBox(height: 60.h),
+                const FeaturedSection(),
 
-              const SectionTitle(
-                title: "Browse Collection",
-                subtitle: "Explore beautifully crafted digital stationery.",
-              ),
+                SizedBox(height: 60.h),
 
-              SizedBox(height: 24.h),
+                const SectionTitle(
+                  title: "Browse Collection",
+                  subtitle: "Explore beautifully crafted digital stationery.",
+                ),
 
-              CategorySelector(
-                selected: provider.selected,
-                onSelect: provider.selectCategory,
-              ),
+                SizedBox(height: 24.h),
 
-              SizedBox(height: 30.h),
+                CategorySelector(
+                  selected: provider.selected,
+                  onSelect: provider.selectCategory,
+                ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                SizedBox(height: 30.h),
 
-                child: GridView.builder(
+                GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-
+                
                   itemCount: products.length,
-
+                
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-
+                
                     crossAxisSpacing: 14.w,
-
+                
                     mainAxisSpacing: 16.h,
-
+                
                     childAspectRatio: .60,
                   ),
-
+                
                   itemBuilder: (_, index) {
                     final product = products[index];
-
+                
                     return ProductCard(
                       product: product,
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => ProductDetailPage(product: product),
+                            builder: (_) =>
+                                ProductDetailPage(product: product),
                           ),
                         );
                       },
                     );
                   },
                 ),
-              ),
 
-              SizedBox(height: 50.h),
+                SizedBox(height: 50.h),
 
-              const Footer(),
-            ],
+                const Footer(),
+              ],
+            ),
           ),
         ),
       ),
