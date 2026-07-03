@@ -53,7 +53,7 @@ class DesktopFeaturedCard extends StatelessWidget {
 
             Text(
               product.title,
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: AppTextStyles.title.copyWith(
                 fontSize: 16,
@@ -66,7 +66,7 @@ class DesktopFeaturedCard extends StatelessWidget {
 
             Text(
               product.tagline,
-              maxLines: 1,
+              maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: AppTextStyles.subtitle.copyWith(fontSize: 12, height: 1.3),
             ),
