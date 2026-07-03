@@ -6,7 +6,7 @@ import '../../../constants/color.dart';
 import '../../../providers/product_provider.dart';
 
 import '../../widgets/mobile/footer.dart';
-import '../product_detail_page.dart';
+import '../product_detail/product_detail_page.dart';
 
 import '../../widgets/mobile/hero_section.dart';
 import '../../widgets/mobile/category_selector.dart';
@@ -30,7 +30,8 @@ class MobileHome extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             // padding: const EdgeInsets.all(8.0),
-            padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 24.h),
+            // padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 24.h),
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 22.h),
 
             child: Column(
               children: [
@@ -59,30 +60,29 @@ class MobileHome extends StatelessWidget {
                 GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                
+
                   itemCount: products.length,
-                
+
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                
+
                     crossAxisSpacing: 14.w,
-                
+
                     mainAxisSpacing: 16.h,
-                
+
                     childAspectRatio: .60,
                   ),
-                
+
                   itemBuilder: (_, index) {
                     final product = products[index];
-                
+
                     return ProductCard(
                       product: product,
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) =>
-                                ProductDetailPage(product: product),
+                            builder: (_) => ProductDetailPage(product: product),
                           ),
                         );
                       },

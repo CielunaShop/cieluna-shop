@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../constants/color.dart';
-import '../../constants/text_styles.dart';
-import '../../models/product.dart';
+import '../../../constants/color.dart';
+import '../../../constants/text_styles.dart';
+import '../../../models/product.dart';
 
-import '../widgets/buy_button.dart';
-import '../widgets/mobile/footer.dart';
-import '../widgets/product_image_carousel.dart';
-import '../widgets/shared/section_title.dart';
+import '../../widgets/buy_button.dart';
+import '../../widgets/mobile/footer.dart';
+import '../../widgets/product_image_carousel.dart';
+import '../../widgets/shared/section_title.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class MobileProductDetail  extends StatelessWidget {
   final Product product;
 
-  const ProductDetailPage({super.key, required this.product});
-
+const MobileProductDetail({
+  super.key,
+  required this.product,
+});
   Future<void> openLink(String url) async {
     await launchUrl(Uri.parse(url));
   }
