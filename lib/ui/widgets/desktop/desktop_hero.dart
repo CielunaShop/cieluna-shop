@@ -14,7 +14,7 @@ class DesktopHero extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(48, 28, 48, 0),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 56, vertical: 44),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(28),

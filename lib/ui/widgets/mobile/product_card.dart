@@ -56,7 +56,7 @@ class ProductCard extends StatelessWidget {
 
                         style: AppTextStyles.title.copyWith(
                           fontSize: 16.sp,
-                          height: 1.25,
+                          // height: 1.25,
                         ),
                       ),
                     ),
