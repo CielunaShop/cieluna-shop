@@ -106,7 +106,12 @@ class Footer extends StatelessWidget {
 
             SizedBox(height: 20.h),
 
-            Container(width: 42.w, height: 1, color: border),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              height: 1.3,
+              color: border,
+            ),
 
             SizedBox(height: 16.h),
 
