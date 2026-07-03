@@ -8,22 +8,22 @@ class DesktopCategoryBar extends StatelessWidget {
   final ProductCategory? selected;
   final Function(ProductCategory?) onSelect;
 
-   DesktopCategoryBar({
+  DesktopCategoryBar({
     super.key,
     required this.selected,
     required this.onSelect,
   });
 
   final List<ProductCategory?> categories = const [
-  null,
-  ProductCategory.planners,
-  ProductCategory.journals,
-  ProductCategory.templates,
-  ProductCategory.worksheets,
-  ProductCategory.notes,
-  ProductCategory.todos,
-  ProductCategory.bundles,
-];
+    null,
+    ProductCategory.planners,
+    ProductCategory.journals,
+    ProductCategory.templates,
+    ProductCategory.worksheets,
+    ProductCategory.notes,
+    ProductCategory.todos,
+    ProductCategory.bundles,
+  ];
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -33,16 +33,16 @@ class DesktopCategoryBar extends StatelessWidget {
       children: categories.map((category) {
         final active = category == selected;
 
-   final label = switch (category) {
-  null => "ALL",
-  ProductCategory.planners => "PLANNERS",
-  ProductCategory.journals => "JOURNALS",
-  ProductCategory.templates => "TEMPLATES",
-  ProductCategory.worksheets => "WORKSHEETS",
-  ProductCategory.notes => "NOTES",
-  ProductCategory.todos => "TO-DO",
-  ProductCategory.bundles => "BUNDLES",
-};
+        final label = switch (category) {
+          null => "ALL",
+          ProductCategory.planners => "PLANNERS",
+          ProductCategory.journals => "JOURNALS",
+          ProductCategory.templates => "TEMPLATES",
+          ProductCategory.worksheets => "WORKSHEETS",
+          ProductCategory.notes => "NOTES",
+          ProductCategory.todos => "TO-DO",
+          ProductCategory.bundles => "BUNDLES",
+        };
 
         return InkWell(
           borderRadius: BorderRadius.circular(50),

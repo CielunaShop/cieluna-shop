@@ -11,128 +11,120 @@ class DesktopHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(48, 40, 48, 0),
-
+      padding: const EdgeInsets.fromLTRB(48, 28, 48, 0),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 70),
-
+        padding: const EdgeInsets.symmetric(horizontal: 56, vertical: 44),
         decoration: BoxDecoration(
           color: card,
-          borderRadius: BorderRadius.circular(36),
+          borderRadius: BorderRadius.circular(28),
           border: Border.all(color: border),
-
           boxShadow: [
             BoxShadow(
               color: shadow,
-              blurRadius: 35,
-              offset: const Offset(0, 18),
+              blurRadius: 28,
+              offset: const Offset(0, 12),
             ),
           ],
         ),
-
         child: Row(
           children: [
-            /// LEFT
+            /// LEFT SIDE
             Expanded(
               flex: 5,
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 82,
-                    height: 82,
-
+                    width: 54,
+                    height: 54,
                     decoration: const BoxDecoration(
                       color: blush,
                       shape: BoxShape.circle,
                     ),
-
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "♡",
-                        style: TextStyle(fontSize: 38, color: accentPink),
+                        style: TextStyle(fontSize: 25, color: accentPink),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 22),
 
                   Text(
                     "CIELUNA",
                     style: AppTextStyles.title.copyWith(
-                      fontSize: 52,
+                      fontSize: 34,
                       fontWeight: FontWeight.w700,
-                      letterSpacing: 10,
+                      letterSpacing: 7,
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 6),
 
                   Text(
                     "DIGITAL STATIONERY",
                     style: AppTextStyles.subtitle.copyWith(
-                      fontSize: 15,
-                      letterSpacing: 4,
-                    ),
-                  ),
-
-                  const SizedBox(height: 42),
-
-                  Text(
-                    "Beautiful planners\nfor everyday life.",
-                    style: AppTextStyles.heading.copyWith(
-                      fontSize: 58,
-                      height: 1.12,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 11,
+                      letterSpacing: 3,
                     ),
                   ),
 
                   const SizedBox(height: 28),
 
-                  SizedBox(
-                    width: 520,
+                  Text(
+                    "Beautiful planners\nfor everyday life.",
+                    style: AppTextStyles.heading.copyWith(
+                      fontSize: 42,
+                      height: 1.12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
 
+                  const SizedBox(height: 18),
+
+                  SizedBox(
+                    width: 460,
                     child: Text(
-                      "Premium printable planners, journals, worksheets and templates designed to make planning calm, beautiful and enjoyable.",
+                      "Premium printable planners, journals, worksheets and "
+                      "templates designed to make planning calm, beautiful "
+                      "and enjoyable.",
                       style: AppTextStyles.subtitle.copyWith(
-                        fontSize: 20,
-                        height: 1.8,
+                        fontSize: 16,
+                        height: 1.65,
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 42),
+                  const SizedBox(height: 28),
 
                   FilledButton(
                     onPressed: () {},
-
                     style: FilledButton.styleFrom(
                       backgroundColor: primaryPink,
                       foregroundColor: Colors.white,
-
-                      minimumSize: const Size(250, 60),
-
+                      minimumSize: const Size(220, 50),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 28,
+                        vertical: 15,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
                     ),
-
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children: [
                         Text(
                           "Explore Collection",
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-
-                        SizedBox(width: 10),
-
-                        Icon(Icons.arrow_forward_rounded),
+                        SizedBox(width: 8),
+                        Icon(Icons.arrow_forward_rounded, size: 19),
                       ],
                     ),
                   ),
@@ -140,13 +132,10 @@ class DesktopHero extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(width: 60),
+            const SizedBox(width: 50),
 
-            /// RIGHT
-          const Expanded(
-  flex: 4,
-  child: DesktopHeroShowcase(),
-),
+            /// RIGHT SIDE
+            const Expanded(flex: 4, child: DesktopHeroShowcase()),
           ],
         ),
       ),
