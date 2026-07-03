@@ -8,127 +8,103 @@ import '../../pages/product_detail_page.dart';
 class DesktopFeaturedCard extends StatelessWidget {
   final Product product;
 
-  const DesktopFeaturedCard({
-    super.key,
-    required this.product,
-  });
+  const DesktopFeaturedCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(24),
-
+      borderRadius: BorderRadius.circular(18),
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (_) => ProductDetailPage(
-              product: product,
-            ),
+            builder: (_) => ProductDetailPage(product: product),
           ),
         );
       },
-
       child: Container(
-        width: 250,
-
+        width: 210,
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: card,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(18),
           border: Border.all(color: border),
-
           boxShadow: [
             BoxShadow(
               color: shadow,
-              blurRadius: 20,
-              offset: const Offset(0, 10),
+              blurRadius: 14,
+              offset: const Offset(0, 7),
             ),
           ],
         ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(13),
+              child: SizedBox(
+                width: double.infinity,
+                height: 175,
+                child: Image.asset(product.images.first, fit: BoxFit.cover),
+              ),
+            ),
 
-        child: Padding(
-          padding: const EdgeInsets.all(12),
+            const SizedBox(height: 11),
 
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
+            Text(
+              product.title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.title.copyWith(
+                fontSize: 16,
+                height: 1.2,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
 
-                child: AspectRatio(
-                  aspectRatio: 1,
+            const SizedBox(height: 5),
 
-                  child: Image.asset(
-                    product.images.first,
-                    fit: BoxFit.cover,
+            Text(
+              product.tagline,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.subtitle.copyWith(fontSize: 12, height: 1.3),
+            ),
+
+            const Spacer(),
+
+            Row(
+              children: [
+                Text(
+                  "₹${product.price}",
+                  style: AppTextStyles.title.copyWith(
+                    fontSize: 18,
+                    color: accentPink,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-              ),
 
-              const SizedBox(height: 16),
+                const Spacer(),
 
-              Text(
-                product.title,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-
-                style: AppTextStyles.title.copyWith(
-                  fontSize: 20,
-                ),
-              ),
-
-              const SizedBox(height: 8),
-
-              Text(
-                product.tagline,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-
-                style: AppTextStyles.subtitle.copyWith(
-                  fontSize: 14,
-                  height: 1.5,
-                ),
-              ),
-
-              const Spacer(),
-
-              Row(
-                children: [
-                  Text(
-                    "₹${product.price}",
-
-                    style: AppTextStyles.title.copyWith(
-                      fontSize: 24,
-                      color: accentPink,
-                    ),
+                Text(
+                  "View",
+                  style: AppTextStyles.subtitle.copyWith(
+                    fontSize: 12,
+                    color: accentPink,
+                    fontWeight: FontWeight.w600,
                   ),
+                ),
 
-                  const Spacer(),
+                const SizedBox(width: 3),
 
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 8,
-                    ),
-
-                    decoration: BoxDecoration(
-                      color: blush,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-
-                    child: Text(
-                      "View",
-
-                      style: AppTextStyles.subtitle.copyWith(
-                        color: accentPink,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                const Icon(
+                  Icons.arrow_forward_rounded,
+                  size: 14,
+                  color: accentPink,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
