@@ -58,7 +58,7 @@ class DesktopCategoryBar extends StatelessWidget {
             child: Text(
               label,
               style: AppTextStyles.subtitle.copyWith(
-                fontSize: 13,
+                fontSize: 15,
                 color: active ? Colors.white : textDark,
                 fontWeight: FontWeight.w600,
               ),

@@ -71,7 +71,7 @@ const SizedBox(height: 10),
                   ),
                 ),
 
-                const SizedBox(height: 90),
+                const SizedBox(height: 60),
 
                 const DesktopFooter(),
 

@@ -24,18 +24,12 @@ class DesktopFeaturedCard extends StatelessWidget {
       },
       child: Container(
         width: 210,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: card,
           borderRadius: BorderRadius.circular(18),
           border: Border.all(color: border),
-          boxShadow: [
-            BoxShadow(
-              color: shadow,
-              blurRadius: 14,
-              offset: const Offset(0, 7),
-            ),
-          ],
+          
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

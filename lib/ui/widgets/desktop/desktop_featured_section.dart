@@ -33,7 +33,7 @@ class DesktopFeaturedSection extends StatelessWidget {
           const SizedBox(height: 24),
 
           SizedBox(
-            height: 300,
+            height: 310,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),

@@ -9,42 +9,36 @@ class DesktopNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
-
+      height: 72,
       padding: const EdgeInsets.symmetric(horizontal: 48),
-
       child: Row(
         children: [
           /// LOGO
           Row(
             children: [
               Container(
-                width: 44,
-                height: 44,
-
+                width: 38,
+                height: 38,
                 decoration: const BoxDecoration(
                   color: blush,
                   shape: BoxShape.circle,
                 ),
-
-                child: Center(
+                child: const Center(
                   child: Text(
                     "♡",
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: accentPink,
-                    ),
+                    style: TextStyle(fontSize: 19, color: accentPink),
                   ),
                 ),
               ),
 
-              const SizedBox(width: 16),
+              const SizedBox(width: 13),
 
               Text(
                 "CIELUNA",
                 style: AppTextStyles.title.copyWith(
-                  letterSpacing: 4,
-                  fontSize: 24,
+                  letterSpacing: 3.5,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
@@ -52,29 +46,29 @@ class DesktopNavbar extends StatelessWidget {
 
           const Spacer(),
 
-          _NavItem("Home"),
-          _NavItem("Shop"),
-          _NavItem("Featured"),
-          _NavItem("About"),
+          const _NavItem("Home"),
+          const _NavItem("Shop"),
+          const _NavItem("Featured"),
+          const _NavItem("About"),
 
-          const SizedBox(width: 30),
+          const SizedBox(width: 22),
 
           FilledButton(
             onPressed: () {},
-
             style: FilledButton.styleFrom(
               backgroundColor: primaryPink,
               foregroundColor: Colors.white,
-
-              minimumSize: const Size(160, 48),
-
+              minimumSize: const Size(135, 42),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-
-            child: const Text("Browse Shop"),
-          )
+            child: const Text(
+              "Browse Shop",
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+            ),
+          ),
         ],
       ),
     );
@@ -89,15 +83,18 @@ class _NavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-
+      padding: const EdgeInsets.symmetric(horizontal: 13),
       child: InkWell(
         onTap: () {},
-
-        child: Text(
-          title,
-          style: AppTextStyles.subtitle.copyWith(
-            fontWeight: FontWeight.w600,
+        borderRadius: BorderRadius.circular(8),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+          child: Text(
+            title,
+            style: AppTextStyles.subtitle.copyWith(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),
