@@ -59,7 +59,7 @@ class DesktopFooter extends StatelessWidget {
                   "Made with ♡ by Cieluna Shop",
                   style: AppTextStyles.subtitle.copyWith(
                     fontSize: 13,
-                    color: subtitleColor,
+                    color: accentPink,
                   ),
                 ),
               ],

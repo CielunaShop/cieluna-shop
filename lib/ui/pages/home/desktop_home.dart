@@ -31,10 +31,9 @@ class DesktopHome extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const DesktopNavbar(),
 
-const SizedBox(height: 10),
+                const SizedBox(height: 10),
                 const DesktopHero(),
 
                 const SizedBox(height: 70),
