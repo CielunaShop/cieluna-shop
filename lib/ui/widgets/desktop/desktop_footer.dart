@@ -78,6 +78,13 @@ class DesktopFooter extends StatelessWidget {
                 title: "YouTube",
                 onTap: () => _launch("https://youtube.com/"),
               ),
+
+              const SizedBox(width: 30),
+
+              _SocialLink(
+                title: "cielunashop@gmail.com",
+                onTap: () => _launch("mailto:cielunashop@gmail.com"),
+              ),
             ],
           ),
         ],
