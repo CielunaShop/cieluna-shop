@@ -68,7 +68,7 @@ class MobileHome extends StatelessWidget {
 
                     mainAxisSpacing: 16.h,
 
-                    childAspectRatio: .60,
+                    childAspectRatio: .55,
                   ),
 
                   itemBuilder: (_, index) {
