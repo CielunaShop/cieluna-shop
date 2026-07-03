@@ -73,29 +73,29 @@ class HeroSection extends StatelessWidget {
             style: AppTextStyles.subtitle.copyWith(height: 1.6),
           ),
 
-          SizedBox(height: 28.h),
+          // SizedBox(height: 28.h),
 
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 15.h),
-            decoration: BoxDecoration(
-              color: primaryPink,
-              borderRadius: BorderRadius.circular(50.r),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text("Explore Collection", style: AppTextStyles.button),
+          // Container(
+          //   padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 15.h),
+          //   decoration: BoxDecoration(
+          //     color: primaryPink,
+          //     borderRadius: BorderRadius.circular(50.r),
+          //   ),
+          //   child: Row(
+          //     mainAxisSize: MainAxisSize.min,
+          //     children: [
+          //       Text("Explore Collection", style: AppTextStyles.button),
 
-                SizedBox(width: 8.w),
+          //       SizedBox(width: 8.w),
 
-                Icon(
-                  Icons.arrow_forward_rounded,
-                  color: Colors.white,
-                  size: 20.sp,
-                ),
-              ],
-            ),
-          ),
+          //       Icon(
+          //         Icons.arrow_forward_rounded,
+          //         color: Colors.white,
+          //         size: 20.sp,
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

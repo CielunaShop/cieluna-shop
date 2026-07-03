@@ -4,7 +4,14 @@ import '../../../constants/color.dart';
 import '../../../constants/text_styles.dart';
 
 class DesktopNavbar extends StatelessWidget {
-  const DesktopNavbar({super.key});
+  final VoidCallback onHomeTap;
+  final VoidCallback onShopTap;
+
+  const DesktopNavbar({
+    super.key,
+    required this.onHomeTap,
+    required this.onShopTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,62 +20,47 @@ class DesktopNavbar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 48),
       child: Row(
         children: [
-          /// LOGO
-          Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: const BoxDecoration(
-                  color: blush,
-                  shape: BoxShape.circle,
-                ),
-                child: const Center(
-                  child: Text(
-                    "♡",
-                    style: TextStyle(fontSize: 19, color: accentPink),
+          InkWell(
+            onTap: onHomeTap,
+            borderRadius: BorderRadius.circular(12),
+            child: Row(
+              children: [
+                Container(
+                  width: 38,
+                  height: 38,
+                  decoration: const BoxDecoration(
+                    color: blush,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "♡",
+                      style: TextStyle(fontSize: 19, color: accentPink),
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(width: 13),
+                const SizedBox(width: 13),
 
-              Text(
-                "CIELUNA",
-                style: AppTextStyles.title.copyWith(
-                  letterSpacing: 3.5,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+                Text(
+                  "CIELUNA",
+                  style: AppTextStyles.title.copyWith(
+                    letterSpacing: 3.5,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
 
           const Spacer(),
 
-          const _NavItem("Home"),
-          const _NavItem("Shop"),
-          const _NavItem("Featured"),
-          const _NavItem("About"),
+          _NavItem(title: "Home", onTap: onHomeTap),
 
-          const SizedBox(width: 22),
+          const SizedBox(width: 10),
 
-          FilledButton(
-            onPressed: () {},
-            style: FilledButton.styleFrom(
-              backgroundColor: primaryPink,
-              foregroundColor: Colors.white,
-              minimumSize: const Size(135, 42),
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
-              ),
-            ),
-            child: const Text(
-              "Browse Shop",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
-            ),
-          ),
+          _NavItem(title: "Shop", onTap: onShopTap),
         ],
       ),
     );
@@ -77,24 +69,22 @@ class DesktopNavbar extends StatelessWidget {
 
 class _NavItem extends StatelessWidget {
   final String title;
+  final VoidCallback onTap;
 
-  const _NavItem(this.title);
+  const _NavItem({required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 13),
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(8),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-          child: Text(
-            title,
-            style: AppTextStyles.subtitle.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-            ),
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(50),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 9),
+        child: Text(
+          title,
+          style: AppTextStyles.subtitle.copyWith(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),

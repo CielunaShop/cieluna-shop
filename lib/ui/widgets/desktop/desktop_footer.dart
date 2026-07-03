@@ -16,49 +16,48 @@ class DesktopFooter extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 48),
-      padding: const EdgeInsets.fromLTRB(42, 34, 42, 32),
+      padding: const EdgeInsets.symmetric(horizontal: 42, vertical: 32),
       decoration: BoxDecoration(
         color: card,
         borderRadius: BorderRadius.circular(26),
         border: Border.all(color: border),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          /// LEFT BRAND AREA
-          SizedBox(
-            width: 390,
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "CIELUNA",
                   style: AppTextStyles.title.copyWith(
-                    fontSize: 22,
+                    fontSize: 21,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 4,
                   ),
                 ),
 
-                const SizedBox(height: 14),
+                const SizedBox(height: 12),
 
-                Text(
-                  "Beautiful digital planners, journals and printable "
-                  "stationery created with simplicity and elegance.",
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.subtitle.copyWith(
-                    fontSize: 14,
-                    height: 1.65,
+                SizedBox(
+                  width: 430,
+                  child: Text(
+                    "Beautiful digital planners and printable stationery "
+                    "created to make everyday planning feel a little more special.",
+                    style: AppTextStyles.subtitle.copyWith(
+                      fontSize: 13,
+                      height: 1.6,
+                    ),
                   ),
                 ),
 
-                const SizedBox(height: 22),
+                const SizedBox(height: 18),
 
                 Text(
                   "Made with ♡ by Cieluna Shop",
                   style: AppTextStyles.subtitle.copyWith(
-                    fontSize: 13,
+                    fontSize: 12,
                     color: accentPink,
                   ),
                 ),
@@ -66,43 +65,19 @@ class DesktopFooter extends StatelessWidget {
             ),
           ),
 
-          const Spacer(),
-
-          _FooterColumn(
-            title: "Shop",
+          Row(
             children: [
-              _FooterLink(title: "All Products", onTap: () {}),
-              _FooterLink(title: "Planners", onTap: () {}),
-              _FooterLink(title: "Journals", onTap: () {}),
-              _FooterLink(title: "Templates", onTap: () {}),
-            ],
-          ),
-
-          const SizedBox(width: 85),
-
-          _FooterColumn(
-            title: "Connect",
-            children: [
-              _FooterLink(
+              _SocialLink(
                 title: "Pinterest",
-                onTap: () => _launch("https://www.pinterest.com/"),
+                onTap: () => _launch("https://in.pinterest.com/cielunashop/"),
               ),
-              _FooterLink(
+
+              const SizedBox(width: 30),
+
+              _SocialLink(
                 title: "YouTube",
                 onTap: () => _launch("https://youtube.com/"),
               ),
-              _FooterLink(title: "Email", onTap: () {}),
-            ],
-          ),
-
-          const SizedBox(width: 85),
-
-          _FooterColumn(
-            title: "Information",
-            children: [
-              _FooterLink(title: "Terms", onTap: () {}),
-              _FooterLink(title: "Privacy", onTap: () {}),
-              _FooterLink(title: "FAQ", onTap: () {}),
             ],
           ),
         ],
@@ -111,54 +86,29 @@ class DesktopFooter extends StatelessWidget {
   }
 }
 
-class _FooterColumn extends StatelessWidget {
-  final String title;
-  final List<Widget> children;
-
-  const _FooterColumn({required this.title, required this.children});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 120,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: AppTextStyles.title.copyWith(
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-
-          const SizedBox(height: 14),
-
-          ...children,
-        ],
-      ),
-    );
-  }
-}
-
-class _FooterLink extends StatelessWidget {
+class _SocialLink extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const _FooterLink({required this.title, required this.onTap});
+  const _SocialLink({required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(4),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2),
-          child: Text(
-            title,
-            style: AppTextStyles.subtitle.copyWith(fontSize: 13, height: 1.3),
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(50),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+        decoration: BoxDecoration(
+          color: blush,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Text(
+          title,
+          style: AppTextStyles.subtitle.copyWith(
+            fontSize: 13,
+            color: accentPink,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),

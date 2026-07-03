@@ -97,37 +97,37 @@ class DesktopHero extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 28),
+                  // const SizedBox(height: 28),
 
-                  FilledButton(
-                    onPressed: () {},
-                    style: FilledButton.styleFrom(
-                      backgroundColor: primaryPink,
-                      foregroundColor: Colors.white,
-                      minimumSize: const Size(220, 50),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 28,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "Explore Collection",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(width: 8),
-                        Icon(Icons.arrow_forward_rounded, size: 19),
-                      ],
-                    ),
-                  ),
+                  // FilledButton(
+                  //   onPressed: () {},
+                  //   style: FilledButton.styleFrom(
+                  //     backgroundColor: primaryPink,
+                  //     foregroundColor: Colors.white,
+                  //     minimumSize: const Size(220, 50),
+                  //     padding: const EdgeInsets.symmetric(
+                  //       horizontal: 28,
+                  //       vertical: 15,
+                  //     ),
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(50),
+                  //     ),
+                  //   ),
+                  //   child: const Row(
+                  //     mainAxisSize: MainAxisSize.min,
+                  //     children: [
+                  //       Text(
+                  //         "Explore Collection",
+                  //         style: TextStyle(
+                  //           fontSize: 15,
+                  //           fontWeight: FontWeight.w600,
+                  //         ),
+                  //       ),
+                  //       SizedBox(width: 8),
+                  //       Icon(Icons.arrow_forward_rounded, size: 19),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
