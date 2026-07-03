@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/color.dart';
 import '../../../constants/text_styles.dart';
@@ -8,45 +7,62 @@ class SectionTitle extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const SectionTitle({super.key, required this.title, required this.subtitle});
+  const SectionTitle({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final bool isDesktop = MediaQuery.sizeOf(context).width >= 900;
+
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 15),
+          margin: EdgeInsets.symmetric(
+            horizontal: isDesktop ? 0 : 15,
+          ),
           width: double.infinity,
-          height: 2,
+          height: isDesktop ? 1 : 2,
           decoration: BoxDecoration(
             color: blush,
             borderRadius: BorderRadius.circular(100),
           ),
         ),
 
-        SizedBox(height: 10),
+        SizedBox(height: isDesktop ? 24 : 10),
+
         Text(
           "♡",
-          style: TextStyle(fontSize: 20.sp, color: accentPink),
+          style: TextStyle(
+            fontSize: isDesktop ? 28 : 20,
+            color: accentPink,
+            fontWeight: FontWeight.w300,
+          ),
         ),
 
-        SizedBox(height: 8.h),
+        SizedBox(height: isDesktop ? 10 : 8),
 
         Text(
           title,
           textAlign: TextAlign.center,
           style: AppTextStyles.title.copyWith(
-            fontSize: 30.sp,
+            fontSize: isDesktop ? 42 : 30,
             fontWeight: FontWeight.w700,
+            height: 1.15,
           ),
         ),
 
-        SizedBox(height: 8.h),
+        SizedBox(height: isDesktop ? 10 : 8),
 
         Text(
           subtitle,
           textAlign: TextAlign.center,
-          style: AppTextStyles.subtitle.copyWith(fontSize: 15.sp, height: 1.6),
+          style: AppTextStyles.subtitle.copyWith(
+            fontSize: isDesktop ? 18 : 15,
+            height: 1.5,
+          ),
         ),
       ],
     );
