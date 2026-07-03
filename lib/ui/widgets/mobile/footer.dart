@@ -30,8 +30,8 @@ class Footer extends StatelessWidget {
           children: [
             // HEART
             Container(
-              width: 42.w,
-              height: 42.w,
+              width: 45.w,
+              height: 45.w,
               decoration: const BoxDecoration(
                 color: blush,
                 shape: BoxShape.circle,
@@ -49,7 +49,7 @@ class Footer extends StatelessWidget {
             Text(
               "CIELUNA",
               style: AppTextStyles.title.copyWith(
-                fontSize: 18.sp,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 3.5,
               ),
@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
               "created to make everyday planning feel a little more special.",
               textAlign: TextAlign.center,
               style: AppTextStyles.subtitle.copyWith(
-                fontSize: 11.5.sp,
+                fontSize: 13.sp,
                 height: 1.6,
               ),
             ),
@@ -85,7 +85,7 @@ class Footer extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.mail_outline_rounded,
-                      size: 16.sp,
+                      size: 18.sp,
                       color: accentPink,
                     ),
 
@@ -94,7 +94,7 @@ class Footer extends StatelessWidget {
                     Text(
                       "cielunashop@gmail.com",
                       style: AppTextStyles.small.copyWith(
-                        fontSize: 10.5.sp,
+                        fontSize: 14.sp,
                         color: accentPink,
                         fontWeight: FontWeight.w600,
                       ),
@@ -113,7 +113,7 @@ class Footer extends StatelessWidget {
             Text(
               "Made with ♡ by Cieluna Shop",
               style: AppTextStyles.small.copyWith(
-                fontSize: 10.sp,
+                fontSize: 13.sp,
                 color: accentPink,
               ),
             ),
