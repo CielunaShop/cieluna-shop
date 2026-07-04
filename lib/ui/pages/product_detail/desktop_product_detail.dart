@@ -6,6 +6,7 @@ import '../../../constants/text_styles.dart';
 import '../../../models/product.dart';
 
 import '../../widgets/desktop/desktop_footer.dart';
+import '../../widgets/shared/product_image_viewer.dart';
 
 class DesktopProductDetail extends StatelessWidget {
   final Product product;
@@ -226,11 +227,56 @@ class _ProductHeroState extends State<_ProductHero> {
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(color: border),
                     ),
-                    child: ClipRRect(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ProductImageViewer(
+                              images: product.images,
+                              initialIndex: selectedImage,
+                            ),
+                          ),
+                        );
+                      },
+
                       borderRadius: BorderRadius.circular(18),
-                      child: Image.asset(
-                        product.images[selectedImage],
-                        fit: BoxFit.contain,
+
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(18),
+
+                            child: Image.asset(
+                              product.images[selectedImage],
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+
+                          /// ZOOM ICON
+                          Positioned(
+                            right: 14,
+                            bottom: 14,
+
+                            child: Container(
+                              width: 42,
+                              height: 42,
+
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.92),
+                                shape: BoxShape.circle,
+                                border: Border.all(color: border),
+                              ),
+
+                              child: const Icon(
+                                Icons.zoom_in_rounded,
+                                size: 21,
+                                color: accentPink,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
