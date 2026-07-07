@@ -10,7 +10,10 @@ class FeaturedSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final featured = products.where((e) => e.featured).take(4).toList();
+    final featured = products
+        .where((product) => product.featured)
+        .take(4)
+        .toList();
 
     return Column(
       children: [
@@ -23,13 +26,14 @@ class FeaturedSection extends StatelessWidget {
 
         SizedBox(
           height: 290.h,
-
           child: ListView.separated(
-            padding: EdgeInsets.only(left: 20.w, right: 8.w),
-
             scrollDirection: Axis.horizontal,
 
             physics: const BouncingScrollPhysics(),
+
+            // No extra left padding.
+            // MobileHome already handles the page padding.
+            padding: EdgeInsets.only(right: 4.w),
 
             itemCount: featured.length,
 

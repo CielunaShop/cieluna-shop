@@ -55,7 +55,6 @@ class CategorySelector extends StatelessWidget {
     return SizedBox(
       height: 52.h,
       child: ListView.separated(
-        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
 
         itemCount: categories.length,

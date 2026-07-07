@@ -24,7 +24,9 @@ class SectionTitle extends StatelessWidget {
             horizontal: isDesktop ? 0 : 10,
           ),
           width: double.infinity,
-          height: isDesktop ? 1 : 2,
+          height: 
+          // isDesktop ? 2 :
+           2,
           decoration: BoxDecoration(
             color: blush,
             borderRadius: BorderRadius.circular(100),
