@@ -54,62 +54,60 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
             },
 
             itemBuilder: (_, index) {
-              return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 2.w),
-
-                child: Material(
-                  color: Colors.transparent,
-
-                  child: InkWell(
-                    onTap: () => _openImageViewer(index),
-                    borderRadius: BorderRadius.circular(16.r),
-
-                    child: Stack(
-                      fit: StackFit.expand,
-
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(16.r),
-
+              return Material(
+                color: Colors.transparent,
+              
+                child: InkWell(
+                  onTap: () => _openImageViewer(index),
+                  borderRadius: BorderRadius.circular(16.r),
+              
+                  child: Stack(
+                    fit: StackFit.expand,
+              
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16.r),
+                        child: Container(
+                          color: card,
                           child: Image.asset(
                             widget.images[index],
                             width: double.infinity,
                             height: double.infinity,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                           ),
                         ),
-
-                        Positioned(
-                          right: 14.w,
-                          bottom: 14.h,
-
-                          child: Container(
-                            width: 42.w,
-                            height: 42.w,
-
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.92),
-                              shape: BoxShape.circle,
-                              border: Border.all(color: border),
-
-                              boxShadow: [
-                                BoxShadow(
-                                  color: shadow,
-                                  blurRadius: 12,
-                                  offset: const Offset(0, 5),
-                                ),
-                              ],
-                            ),
-
-                            child: Icon(
-                              Icons.zoom_in_rounded,
-                              size: 21.sp,
-                              color: accentPink,
-                            ),
+                      ),
+              
+                      Positioned(
+                        right: 14.w,
+                        bottom: 14.h,
+              
+                        child: Container(
+                          width: 42.w,
+                          height: 42.w,
+              
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.92),
+                            shape: BoxShape.circle,
+                            border: Border.all(color: border),
+              
+                            boxShadow: [
+                              BoxShadow(
+                                color: shadow,
+                                blurRadius: 12,
+                                offset: const Offset(0, 5),
+                              ),
+                            ],
+                          ),
+              
+                          child: Icon(
+                            Icons.zoom_in_rounded,
+                            size: 21.sp,
+                            color: accentPink,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               );
