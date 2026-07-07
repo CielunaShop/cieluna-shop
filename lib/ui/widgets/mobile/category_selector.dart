@@ -16,12 +16,14 @@ class CategorySelector extends StatelessWidget {
     required this.onSelect,
   });
 
-  static const categories = <ProductCategory?>[
+  static const categories = [
     null,
     ProductCategory.planners,
     ProductCategory.journals,
     ProductCategory.templates,
     ProductCategory.worksheets,
+    ProductCategory.notes,
+    ProductCategory.todos,
     ProductCategory.bundles,
   ];
 
@@ -39,10 +41,12 @@ class CategorySelector extends StatelessWidget {
         return "Worksheets";
       case ProductCategory.bundles:
         return "Bundles";
+ 
       case ProductCategory.notes:
-        throw "Notes";
+        return "Notes";
+
       case ProductCategory.todos:
-        throw "To-Dos";
+        return "To-Do";
     }
   }
 
@@ -51,7 +55,7 @@ class CategorySelector extends StatelessWidget {
     return SizedBox(
       height: 52.h,
       child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
 
         itemCount: categories.length,

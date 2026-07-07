@@ -3,6 +3,56 @@ import '../models/product_category.dart';
 
 final List<Product> products = [
   Product(
+    id: "celestial_study_planner",
+
+    title: "Celestial Study Planner",
+
+    tagline: "Plan your academic life among the stars.",
+
+    category: ProductCategory.planners,
+
+    description:
+        "A celestial-themed printable study planner designed to keep your academic life beautifully organized. Plan your month, structure your week, manage classes and assignments, and keep notes in one dreamy collection inspired by moonlit skies and the stars. Your purchase includes both a ready-to-print PDF and a ZIP folder containing all planner pages as high-quality PNG files.",
+
+    images: [
+      "assets/planners/celestial/cover.png",
+      "assets/planners/celestial/preview1.png",
+      "assets/planners/celestial/preview2.png",
+      "assets/planners/celestial/preview3.png",
+    ],
+
+    highlights: [
+      "PDF + High-Quality PNGs",
+      "6 Printable Pages",
+      "Instant Download",
+      "Print Again Anytime",
+    ],
+
+    contents: [
+      "Celestial Cover Page",
+      "Monthly Overview",
+      "Weekly Overview",
+      "Class Schedule",
+      "Assignment Tracker",
+      "Lined Notes Page",
+      "Ready-to-Print PDF File",
+      "ZIP Folder with 6 High-Quality PNGs",
+    ],
+
+    format: "PDF + PNG (ZIP)",
+
+    pageSize: "A4",
+
+    pageCount: 6,
+
+    price: 199,
+
+    purchaseUrl: "YOUR_GOOGLE_FORM",
+
+    featured: true,
+  ),
+
+  Product(
     id: "fantasy_student_planner",
 
     title: "Fantasy Student Planner",
@@ -108,149 +158,147 @@ final List<Product> products = [
     featured: true,
   ),
 
+  Product(
+    id: "gothic_todo_list",
 
-Product(
-  id: "gothic_todo_list",
+    title: "Dark Gothic To-Do List",
 
-  title: "Dark Gothic To-Do List",
+    tagline: "Victorian-inspired printable for dark academia lovers.",
 
-  tagline: "Victorian-inspired printable for dark academia lovers.",
+    category: ProductCategory.todos,
 
-  category: ProductCategory.todos,
+    description:
+        "A printable gothic to-do list featuring vintage Victorian borders, subtle horror-inspired artwork and elegant parchment textures. Ideal for journaling, planning and dark aesthetic lovers.",
 
-  description:
-      "A printable gothic to-do list featuring vintage Victorian borders, subtle horror-inspired artwork and elegant parchment textures. Ideal for journaling, planning and dark aesthetic lovers.",
+    images: [
+      "assets/todos/cover.png",
+      "assets/todos/preview1.png",
+      "assets/todos/preview2.png",
+      "assets/todos/preview3.png",
+    ],
 
-  images: [
-    "assets/todos/cover.png",
-    "assets/todos/preview1.png",
-    "assets/todos/preview2.png",
-    "assets/todos/preview3.png",
-  ],
+    highlights: [
+      "Printable PDF",
+      "A4 Size",
+      "Vintage Gothic",
+      "Reusable Forever",
+    ],
 
-  highlights: [
-    "Printable PDF",
-    "A4 Size",
-    "Vintage Gothic",
-    "Reusable Forever",
-  ],
+    contents: [
+      "1 Printable To-Do Page",
+      "Checklist Section",
+      "Notes From Darkness",
+      "High Resolution Artwork",
+    ],
 
-  contents: [
-    "1 Printable To-Do Page",
-    "Checklist Section",
-    "Notes From Darkness",
-    "High Resolution Artwork",
-  ],
+    format: "PDF",
 
-  format: "PDF",
+    pageSize: "A4",
 
-  pageSize: "A4",
+    pageCount: 1,
 
-  pageCount: 1,
+    price: 49,
 
-  price: 49,
+    purchaseUrl: "YOUR_GOOGLE_FORM",
 
-  purchaseUrl: "YOUR_GOOGLE_FORM",
+    featured: true,
+  ),
 
-  featured: true,
-),
+  Product(
+    id: "pastel_notes_collection",
 
-Product(
-  id: "pastel_notes_collection",
+    title: "Pastel Notes Collection",
 
-  title: "Pastel Notes Collection",
+    tagline: "Soft purple printables for productive study sessions.",
 
-  tagline: "Soft purple printables for productive study sessions.",
+    category: ProductCategory.notes,
 
-  category: ProductCategory.notes,
+    description:
+        "Minimal pastel printable note pages with soft lavender accents and clean layouts. Great for school, university, journaling and everyday planning.",
 
-  description:
-      "Minimal pastel printable note pages with soft lavender accents and clean layouts. Great for school, university, journaling and everyday planning.",
+    images: [
+      "assets/notes/cover.png",
+      "assets/notes/preview1.png",
+      "assets/notes/preview2.png",
+      "assets/notes/preview3.png",
+    ],
 
-  images: [
-    "assets/notes/cover.png",
-    "assets/notes/preview1.png",
-    "assets/notes/preview2.png",
-    "assets/notes/preview3.png",
-  ],
+    highlights: [
+      "Printable PDF",
+      "Pastel Theme",
+      "Minimal Design",
+      "Instant Download",
+    ],
 
-  highlights: [
-    "Printable PDF",
-    "Pastel Theme",
-    "Minimal Design",
-    "Instant Download",
-  ],
+    contents: [
+      "Lined Notes",
+      "Cornell Notes",
+      "Study Notes",
+      "Lecture Notes",
+      "Brain Dump",
+      "Checklist",
+    ],
 
-  contents: [
-    "Lined Notes",
-    "Cornell Notes",
-    "Study Notes",
-    "Lecture Notes",
-    "Brain Dump",
-    "Checklist",
-  ],
+    format: "PDF",
 
-  format: "PDF",
+    pageSize: "A4",
 
-  pageSize: "A4",
+    pageCount: 6,
 
-  pageCount: 6,
+    price: 79,
 
-  price: 79,
+    purchaseUrl: "YOUR_GOOGLE_FORM",
 
-  purchaseUrl: "YOUR_GOOGLE_FORM",
+    featured: true,
+  ),
 
-  featured: true,
-),
+  Product(
+    id: "gothic_todo_list",
 
+    title: "Dark Gothic To-Do List",
 
-Product(
-  id: "gothic_todo_list",
+    tagline: "Victorian-inspired printable for dark academia lovers.",
 
-  title: "Dark Gothic To-Do List",
+    category: ProductCategory.todos,
 
-  tagline: "Victorian-inspired printable for dark academia lovers.",
+    description:
+        "A printable gothic to-do list featuring vintage Victorian borders, subtle horror-inspired artwork and elegant parchment textures. Ideal for journaling, planning and dark aesthetic lovers.",
 
-  category: ProductCategory.todos,
+    images: [
+      "assets/todos/cover.png",
+      "assets/todos/preview1.png",
+      "assets/todos/preview2.png",
+      "assets/todos/preview3.png",
+    ],
 
-  description:
-      "A printable gothic to-do list featuring vintage Victorian borders, subtle horror-inspired artwork and elegant parchment textures. Ideal for journaling, planning and dark aesthetic lovers.",
+    highlights: [
+      "Printable PDF",
+      "A4 Size",
+      "Vintage Gothic",
+      "Reusable Forever",
+    ],
 
-  images: [
-    "assets/todos/cover.png",
-    "assets/todos/preview1.png",
-    "assets/todos/preview2.png",
-    "assets/todos/preview3.png",
-  ],
+    contents: [
+      "1 Printable To-Do Page",
+      "Checklist Section",
+      "Notes From Darkness",
+      "High Resolution Artwork",
+    ],
 
-  highlights: [
-    "Printable PDF",
-    "A4 Size",
-    "Vintage Gothic",
-    "Reusable Forever",
-  ],
+    format: "PDF",
 
-  contents: [
-    "1 Printable To-Do Page",
-    "Checklist Section",
-    "Notes From Darkness",
-    "High Resolution Artwork",
-  ],
+    pageSize: "A4",
 
-  format: "PDF",
+    pageCount: 1,
 
-  pageSize: "A4",
+    price: 49,
 
-  pageCount: 1,
+    purchaseUrl: "YOUR_GOOGLE_FORM",
 
-  price: 49,
+    featured: true,
+  ),
 
-  purchaseUrl: "YOUR_GOOGLE_FORM",
-
-  featured: true,
-),
-
-Product(
+  Product(
     id: "fantasy_student_planner",
 
     title: "Fantasy Student Planner",
@@ -304,5 +352,4 @@ Product(
 
     featured: true,
   ),
-
 ];

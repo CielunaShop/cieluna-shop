@@ -29,10 +29,9 @@ class MobileHome extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            // padding: const EdgeInsets.all(8.0),
+            // padding: const EdgeInsets.all(20),
             // padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 24.h),
-            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 22.h),
-
+            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
             child: Column(
               children: [
                 const HeroSection(),

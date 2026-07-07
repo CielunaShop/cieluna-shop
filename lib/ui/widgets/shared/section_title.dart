@@ -21,7 +21,7 @@ class SectionTitle extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: isDesktop ? 0 : 15,
+            horizontal: isDesktop ? 0 : 10,
           ),
           width: double.infinity,
           height: isDesktop ? 1 : 2,

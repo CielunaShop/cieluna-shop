@@ -10,7 +10,7 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 0),
+      // margin: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 0),
       padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 36.h),
       decoration: BoxDecoration(
         color: card,
