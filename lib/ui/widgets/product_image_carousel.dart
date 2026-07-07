@@ -39,47 +39,59 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 350.h,
+        /// SQUARE IMAGE BOX
+        AspectRatio(
+          aspectRatio: 1,
+
           child: PageView.builder(
             controller: _controller,
             itemCount: widget.images.length,
+
             onPageChanged: (index) {
               setState(() {
                 activeIndex = index;
               });
             },
+
             itemBuilder: (_, index) {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 2.w),
+
                 child: Material(
                   color: Colors.transparent,
+
                   child: InkWell(
                     onTap: () => _openImageViewer(index),
                     borderRadius: BorderRadius.circular(16.r),
+
                     child: Stack(
                       fit: StackFit.expand,
+
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(16.r),
+
                           child: Image.asset(
                             widget.images[index],
-                            fit: BoxFit.cover,
                             width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
                           ),
                         ),
 
-                        /// ZOOM BUTTON
                         Positioned(
                           right: 14.w,
                           bottom: 14.h,
+
                           child: Container(
                             width: 42.w,
                             height: 42.w,
+
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.92),
                               shape: BoxShape.circle,
                               border: Border.all(color: border),
+
                               boxShadow: [
                                 BoxShadow(
                                   color: shadow,
@@ -88,6 +100,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
                                 ),
                               ],
                             ),
+
                             child: Icon(
                               Icons.zoom_in_rounded,
                               size: 21.sp,
@@ -109,6 +122,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
         AnimatedSmoothIndicator(
           activeIndex: activeIndex,
           count: widget.images.length,
+
           effect: ExpandingDotsEffect(
             activeDotColor: accentPink,
             dotColor: blush,
