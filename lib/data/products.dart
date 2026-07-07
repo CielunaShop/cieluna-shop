@@ -24,7 +24,7 @@ final List<Product> products = [
     highlights: [
       "PDF + High-Quality PNGs",
       "6 Printable Pages",
-      "Instant Download",
+       "A4 Landscape",
       "Print Again Anytime",
     ],
 
@@ -41,7 +41,7 @@ final List<Product> products = [
 
     format: "PDF + PNG (ZIP)",
 
-    pageSize: "A4",
+    pageSize: "A4 Landscape",
 
     pageCount: 6,
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../constants/color.dart';
-import 'shared/product_image_viewer.dart';
+import '../../../constants/color.dart';
+import '../shared/product_image_viewer.dart';
 
 class ProductImageCarousel extends StatefulWidget {
   final List<String> images;

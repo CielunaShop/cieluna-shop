@@ -8,6 +8,10 @@ import '../../../models/product.dart';
 import '../../widgets/desktop/desktop_footer.dart';
 import '../../widgets/shared/product_image_viewer.dart';
 
+import '../../widgets/product_detail/product_highlights.dart';
+import '../../widgets/product_detail/product_included_list.dart';
+import '../../widgets/product_detail/product_specifications.dart';
+
 class DesktopProductDetail extends StatelessWidget {
   final Product product;
 
@@ -76,38 +80,64 @@ class DesktopProductDetail extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: _DetailSection(
-                          title: "What's Included",
-                          subtitle: "Everything in your purchase.",
-                          child: Column(
-                            children: product.contents
-                                .map((item) => _IncludedItem(text: item))
-                                .toList(),
-                          ),
+                        child: Column(
+                          children: [
+                            Text(
+                              "What's Included",
+                              style: AppTextStyles.title.copyWith(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+
+                            const SizedBox(height: 6),
+
+                            Text(
+                              "Everything included in your purchase.",
+                              style: AppTextStyles.subtitle.copyWith(
+                                fontSize: 13,
+                              ),
+                            ),
+
+                            const SizedBox(height: 20),
+
+                            ProductIncludedList(
+                              contents: product.contents,
+                              isDesktop: true,
+                            ),
+                          ],
                         ),
                       ),
 
                       const SizedBox(width: 28),
 
                       Expanded(
-                        child: _DetailSection(
-                          title: "Product Details",
-                          subtitle: "Quick specifications.",
-                          child: Column(
-                            children: [
-                              _SpecRow(title: "Format", value: product.format),
-                              const Divider(color: border),
-                              _SpecRow(
-                                title: "Page Size",
-                                value: product.pageSize,
+                        child: Column(
+                          children: [
+                            Text(
+                              "Product Details",
+                              style: AppTextStyles.title.copyWith(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
                               ),
-                              const Divider(color: border),
-                              _SpecRow(
-                                title: "Pages",
-                                value: "${product.pageCount}",
+                            ),
+
+                            const SizedBox(height: 6),
+
+                            Text(
+                              "File and product specifications.",
+                              style: AppTextStyles.subtitle.copyWith(
+                                fontSize: 13,
                               ),
-                            ],
-                          ),
+                            ),
+
+                            const SizedBox(height: 20),
+
+                            ProductSpecifications(
+                              product: product,
+                              isDesktop: true,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -326,15 +356,9 @@ class _ProductHeroState extends State<_ProductHero> {
 
                   const SizedBox(height: 24),
 
-                  Wrap(
-                    spacing: 9,
-                    runSpacing: 9,
-                    children: [
-                      const _ProductChip(text: "Printable PDF"),
-                      _ProductChip(text: product.pageSize),
-                      _ProductChip(text: "${product.pageCount} Pages"),
-                      const _ProductChip(text: "Instant Download"),
-                    ],
+                  ProductHighlights(
+                    highlights: product.highlights,
+                    isDesktop: true,
                   ),
 
                   const SizedBox(height: 30),
@@ -439,31 +463,6 @@ class _Thumbnail extends StatelessWidget {
   }
 }
 
-class _ProductChip extends StatelessWidget {
-  final String text;
-
-  const _ProductChip({required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
-      decoration: BoxDecoration(
-        color: blush,
-        borderRadius: BorderRadius.circular(30),
-      ),
-      child: Text(
-        "♡  $text",
-        style: AppTextStyles.subtitle.copyWith(
-          fontSize: 12,
-          color: accentPink,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    );
-  }
-}
-
 class _SectionHeading extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -495,114 +494,6 @@ class _SectionHeading extends StatelessWidget {
           style: AppTextStyles.subtitle.copyWith(fontSize: 14),
         ),
       ],
-    );
-  }
-}
-
-class _DetailSection extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final Widget child;
-
-  const _DetailSection({
-    required this.title,
-    required this.subtitle,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: AppTextStyles.title.copyWith(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-
-        const SizedBox(height: 6),
-
-        Text(subtitle, style: AppTextStyles.subtitle.copyWith(fontSize: 13)),
-
-        const SizedBox(height: 20),
-
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(26),
-          decoration: BoxDecoration(
-            color: card,
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: border),
-            boxShadow: [
-              BoxShadow(
-                color: shadow,
-                blurRadius: 18,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: child,
-        ),
-      ],
-    );
-  }
-}
-
-class _IncludedItem extends StatelessWidget {
-  final String text;
-
-  const _IncludedItem({required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 9),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text("♡", style: TextStyle(fontSize: 16, color: accentPink)),
-
-          const SizedBox(width: 12),
-
-          Expanded(
-            child: Text(
-              text,
-              style: AppTextStyles.body.copyWith(fontSize: 14, height: 1.5),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SpecRow extends StatelessWidget {
-  final String title;
-  final String value;
-
-  const _SpecRow({required this.title, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              style: AppTextStyles.subtitle.copyWith(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-
-          Text(value, style: AppTextStyles.body.copyWith(fontSize: 14)),
-        ],
-      ),
     );
   }
 }
