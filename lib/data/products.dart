@@ -24,7 +24,7 @@ final List<Product> products = [
     highlights: [
       "PDF + High-Quality PNGs",
       "6 Printable Pages",
-       "A4 Landscape",
+      "A4 Landscape",
       "Print Again Anytime",
     ],
 
@@ -46,6 +46,124 @@ final List<Product> products = [
     pageCount: 6,
 
     price: 199,
+
+    purchaseUrl: "YOUR_GOOGLE_FORM",
+
+    featured: true,
+  ),
+
+  Product(
+    id: "pastel_notes_bundle",
+
+    title: "Pastel Notes Bundle",
+
+    tagline:
+        "Cute printable note pages for studying, planning and everything in between.",
+
+    category: ProductCategory.notes,
+
+    description:
+        "A soft pastel purple collection of 9 printable note pages designed "
+        "to make studying, planning and everyday writing feel a little more "
+        "beautiful. From lecture notes and focused study sessions to brain "
+        "dumps, to-do lists and flexible writing layouts, this bundle gives "
+        "you a page for every kind of thought. Print your favorites whenever "
+        "you need them or use them digitally for school, university, journaling "
+        "and everyday organization.",
+
+    images: [
+      "assets/notes/9pages/cover.png",
+      "assets/notes/9pages/preview1.png",
+      "assets/notes/9pages/preview2.png",
+      "assets/notes/9pages/preview3.png",
+      "assets/notes/9pages/preview4.png",
+    ],
+
+    highlights: [
+      "9 Printable Pages",
+      "A4 Portrait",
+      "PDF + High-Quality PNGs",
+      "Unlimited Printing",
+    ],
+
+    contents: [
+      "To-Do List",
+      "Notes Page",
+      "Lecture Notes",
+      "Study Session Notes",
+      "Brain Dump",
+      "Grid Notes",
+      "Dashed Lined Notes",
+      "Dotted Notes",
+      "To-Do List with Don't Forget Section",
+    ],
+
+    format: "PDF + PNG (ZIP)",
+
+    pageSize: "A4 Portrait",
+
+    pageCount: 9,
+
+    price: 99,
+
+    purchaseUrl: "",
+
+    featured: true,
+  ),
+
+  Product(
+    id: "pastel_notes_bundle",
+
+    title: "Pastel Notes Bundle",
+
+    tagline: "9 dreamy purple pages for notes, ideas and study sessions.",
+
+    category: ProductCategory.notes,
+
+    description:
+        "A dreamy collection of 9 pastel purple printable pages designed "
+        "for studying, planning, note-taking and capturing every little idea. "
+        "With soft lavender tones, delicate butterflies and clean functional "
+        "layouts, this bundle makes everyday productivity feel a little more "
+        "beautiful. Your purchase includes a printable PDF plus a ZIP folder "
+        "containing all 9 pages as high-quality PNG files.",
+
+    images: [
+      "assets/notes/pastel/preview1.png",
+      "assets/notes/pastel/preview2.png",
+      "assets/notes/pastel/preview3.png",
+      "assets/notes/pastel/preview4.png",
+      "assets/notes/pastel/preview5.png",
+    ],
+
+    highlights: [
+      "PDF + PNG Files",
+      "9 Aesthetic Pages",
+      "A4 Portrait",
+      "Unlimited Personal Printing",
+    ],
+
+    contents: [
+      "1 Printable PDF",
+      "1 ZIP Folder with High-Quality PNG Pages",
+      "To Do List",
+      "Lecture Notes",
+      "Notes Page",
+      "Study Session Notes",
+      "Grid Notes",
+      "Brain Dump",
+      "Dot Grid Notes",
+      "Dashed Notes",
+      "Detailed To-Do List",
+    ],
+
+    format: "PDF + ZIP (PNG)",
+
+    pageSize: "A4 Portrait",
+
+    pageCount: 9,
+
+    price: 99,
 
     purchaseUrl: "YOUR_GOOGLE_FORM",
 

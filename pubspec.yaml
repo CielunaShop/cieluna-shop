@@ -67,6 +67,7 @@ flutter:
     - assets/
     - assets/planners/fantasy/
     - assets/planners/celestial/
+    - assets/notes/9pages/
     - assets/todos/
     - assets/notes/
     
