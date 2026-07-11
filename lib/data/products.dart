@@ -47,7 +47,8 @@ final List<Product> products = [
 
     price: 199,
 
-    purchaseUrl: "YOUR_GOOGLE_FORM",
+    purchaseUrl:
+        "https://docs.google.com/forms/d/e/1FAIpQLScvo6oNSdZO1ffuOQnRv89NbY9kAQAabmW9ftAtEwVEy2AnBg/viewform?usp=pp_url&entry.1992725473=%F0%9F%8C%99+Celestial+Study+Planner+%E2%80%93+Study+Under+the+Stars%0A%0AWhat's+Included:%0A%E2%99%A1+1+Printable+PDF%0A%E2%99%A1+1+ZIP+Folder+containing+high-quality+PNG+pages%0A%0APlanner+Pages:%0A%E2%99%A1+Cover+Page%0A%E2%99%A1+Monthly+Overview%0A%E2%99%A1+Weekly+Overview%0A%E2%99%A1+Class+Schedule%0A%E2%99%A1+Assignment+Tracker%0A%E2%99%A1+Notes+Page%0A%0ASpecifications:%0A%E2%99%A1+6+Pages%0A%E2%99%A1+A4+Landscape+Size%0A%E2%99%A1+High+Resolution%0A%E2%99%A1+Printable+%26+Digital+Friendly%0A%E2%99%A1+Reusable+%26+Unlimited+Personal+Printing%0A%0AFiles+Included:%0A%E2%99%A1+PDF%0A%E2%99%A1+ZIP+(PNG+Files)%0A%0APrice:+%E2%82%B9199",
 
     featured: true,
   ),
@@ -106,11 +107,68 @@ final List<Product> products = [
 
     price: 99,
 
-    purchaseUrl: "",
+    purchaseUrl:
+        "https://docs.google.com/forms/d/e/1FAIpQLScvo6oNSdZO1ffuOQnRv89NbY9kAQAabmW9ftAtEwVEy2AnBg/viewform?usp=pp_url&entry.1992725473=%F0%9F%93%9A+Study+Smart,+Stay+Cute+%E2%80%93+Aesthetic+Notes+Bundle%0A%0A%F0%9F%92%9C+What's+Included%0A%0A%E2%99%A1+1+Printable+PDF+(9+Pages)%0A%E2%99%A1+1+ZIP+Folder+containing+all+9+pages+as+high-quality+PNG+files%0A%0A%F0%9F%93%9D+Page+Designs%0A%0A%E2%99%A1+To+Do+List%0A%E2%99%A1+Lecture+Notes%0A%E2%99%A1+Study+Session+Notes%0A%E2%99%A1+Notes+Page%0A%E2%99%A1+Brain+Dump%0A%E2%99%A1+Grid+Paper%0A%E2%99%A1+Dashed+Notes%0A%E2%99%A1+Dotted+Paper%0A%E2%99%A1+Bonus+To+Do+List+Layout%0A%0A%F0%9F%93%84+Specifications%0A%0A%E2%99%A1+A4+Size%0A%E2%99%A1+High+Resolution%0A%E2%99%A1+Printable+%26+Digital+Friendly%0A%E2%99%A1+Unlimited+Personal+Printing%0A%0A%F0%9F%93%A6+Files+Included%0A%0A%E2%99%A1+PDF%0A%E2%99%A1+ZIP+(PNG+Files)%0A%0APrice:+%E2%82%B9149+(Launch+Offer)",
 
     featured: true,
   ),
 
+  Product(
+    id: "fantasy_student_planner",
+
+    title: "Fantasy Student Planner",
+
+    tagline: "A magical printable planner for beautifully organized study.",
+
+    category: ProductCategory.planners,
+
+    description:
+        "Bring a little magic to your study routine with this fantasy-inspired "
+        "student planner. Designed with elegant lavender illustrations, castles, "
+        "crystals and celestial details, this planner helps you organize your "
+        "classes, assignments and weekly goals while keeping your desk aesthetic. "
+        "Your purchase includes a printable PDF and a ZIP folder containing "
+        "high-quality PNG versions of every page for digital or printable use.",
+
+    images: [
+      "assets/planners/fantasy/preview1.png",
+      "assets/planners/fantasy/preview2.png",
+      "assets/planners/fantasy/preview3.png",
+      "assets/planners/fantasy/preview4.png",
+    ],
+
+    highlights: [
+      "PDF + PNG Files",
+      "A4 Landscape",
+      "6 Beautiful Pages",
+      "Unlimited Personal Printing",
+    ],
+
+    contents: [
+      "1 Printable PDF",
+      "1 ZIP Folder with High-Quality PNG Pages",
+      "Fantasy Cover Page",
+      "Monthly Overview",
+      "Weekly Overview",
+      "Class Schedule",
+      "Assignment Tracker",
+      "Notes Page",
+    ],
+
+    format: "PDF + ZIP (PNG)",
+
+    pageSize: "A4 Landscape",
+
+    pageCount: 6,
+
+    price: 99,
+
+    purchaseUrl: "YOUR_GOOGLE_FORM",
+
+    featured: true,
+  ),
+
+  // just placeholders
   Product(
     id: "pastel_notes_bundle",
 
@@ -220,7 +278,8 @@ final List<Product> products = [
 
     price: 199,
 
-    purchaseUrl: "YOUR_GOOGLE_FORM",
+    purchaseUrl:
+        "https://docs.google.com/forms/d/e/1FAIpQLScvo6oNSdZO1ffuOQnRv89NbY9kAQAabmW9ftAtEwVEy2AnBg/viewform?usp=pp_url&entry.1992725473=%F0%9F%93%9A+Fantasy+Student+Planner+(Purple)%0A%0AWhat's+Included:%0A%E2%99%A1+1+Printable+PDF%0A%E2%99%A1+1+ZIP+Folder+containing+high-quality+PNG+pages%0A%0APlanner+Pages:%0A%E2%99%A1+Cover+Page%0A%E2%99%A1+Monthly+Overview%0A%E2%99%A1+Weekly+Overview%0A%E2%99%A1+Class+Schedule%0A%E2%99%A1+Assignment+Tracker%0A%E2%99%A1+Notes+Page%0A%0ASpecifications:%0A%E2%99%A1+A4+Size%0A%E2%99%A1+High+Resolution%0A%E2%99%A1+Printable+%26+Digital+Friendly%0A%E2%99%A1+Reusable+%26+Unlimited+Personal+Printing%0A%0AFiles+Included:%0A%E2%99%A1+PDF%0A%E2%99%A1+ZIP+(PNG+Files)%0A%0APrice:+%E2%82%B9199+(Launch+Offer)",
 
     featured: true,
   ),
